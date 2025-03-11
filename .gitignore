@@ -1,0 +1,41 @@
+# Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+env/
+venv/
+ENV/
+.venv/
+
+# VS Code settings
+.vscode/
+
+# Dependency logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Local database (if using SQLite)
+db.sqlite3
+*.sqlite3
+
+# Django migrations (optional)
+*/migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.pyo
+
+# Log files
+*.log
+
+# Django static and cache files
+staticfiles/
+*.tmp
+
+# Environment variables (secrets)
+.env
+*.env
+
+# macOS system files
+.DS_Store
