@@ -1,0 +1,19 @@
+.container_carousel {
+  max-width: 600px; /* Reduce el tamaño del contenedor */
+  margin: 0 auto; /* Centra el carrusel */
+  padding: 20px; /* Espaciado interno para evitar que se vea muy apretado */
+}
+.container_carousel h1 {
+  text-align: center;
+}
+  /* Ajustar tamaño de imágenes */
+  .carousel-inner img {
+    width: 200px; /* Ancho fijo */
+    height: 300px; /* Alto fijo */
+    object-fit: cover; /* Mantiene la proporción */
+  }
+
+  /* Hacer las flechas de navegación negras */
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: invert(1); /* Convierte el color a negro */
+  }

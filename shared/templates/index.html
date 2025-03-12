@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'shared/css/index.css' %}">
+
+<div class="container container_carousel">
+    <h1>Our Services</h1>
+    <div id="servicesCarousel" class="carousel slide ">
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+
+        <!-- Carrusel -->
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row align-items-center">
+              <div class="col-md-6 text-center">
+                <img src="{% static 'shared/img/maquina_costurera.avif' %}" alt="Uniform Manufacturing">
+              </div>
+              <div class="col-md-6 p-4">
+                <h5 class="text-black">Uniform Manufacturing</h5>
+                <p class="text-black">We specialise in high-quality uniform manufacturing, delivering tailored solutions for diverse industries.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6 text-center">
+                <img src="{% static 'shared/img/pasarela.avif' %}" alt="Bespoke Designs">
+              </div>
+              <div class="col-md-6 p-4">
+                <h5 class="text-black">Bespoke Designs</h5>
+                <p class="text-black">We specialise in bespoke designs that cater to the unique needs of your organisation. Our high-quality uniforms, footwear, and accessories are crafted with durability, comfort, and style in mind. We take pride in creating professional attire that not only meets industry standards but also reflects your brand’s identity.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6 text-center">
+                <img src="{% static 'shared/img/maquina_costurera.avif' %}" alt="Unique Embroidery">
+              </div>
+              <div class="col-md-6 p-4">
+                <h5 class="text-black">Unique Embroidery</h5>
+                <p class="text-black">We offer unique embroidery services that enhance your brand identity. Our skilled team utilises advanced techniques to create vibrant, detailed designs on a variety of fabrics. Whether for uniforms, promotional items, or corporate apparel, our custom embroidery adds a professional touch that sets your team apart.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6 text-center">
+                <img src="{% static 'shared/img/maquina_serigrafia.avif' %}" alt="Silk Screen Printing">
+              </div>
+              <div class="col-md-6 p-4">
+                <h5 class="text-black">Silk Screen Printing</h5>
+                <p class="text-black">Our specialised silk screen printing services deliver high-quality, vibrant designs that stand out. Ideal for uniforms, promotional products, and corporate apparel, our technique ensures durability and precision, allowing your brand’s message to shine through on any fabric. Trust us to bring your vision to life with expert craftsmanship and attention to detail.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+{% endblock %}
