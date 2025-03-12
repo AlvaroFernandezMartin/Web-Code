@@ -15,5 +15,15 @@
 
   /* Hacer las flechas de navegación negras */
   .carousel-control-prev-icon, .carousel-control-next-icon {
+
     filter: invert(1); /* Convierte el color a negro */
   }
+
+  .carousel-control-prev {
+    left: -20px;
+  }
+  
+  .carousel-control-next {
+    right: -20px;
+  }
+  
