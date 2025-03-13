@@ -1,10 +1,46 @@
-footer a:hover {
-    color: #ff6600 !important;
+/* General structure and layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-.logo{
+.container-fluid {
+    flex: 1;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/* General styles and navigation */
+.bg-primary {
+    background-color: rgba(40, 38, 86, 1) !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #ffde44 !important;
+}
+
+.navbar-toggler {
+    background-color: white; 
+}
+
+/* Footer styles and links */
+footer a:hover {
+    color: #ffde44 !important;
+}
+
+/* Logo styles */
+.logo {
     margin-left: 10%;
 }
+
 .logo-footer {
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
