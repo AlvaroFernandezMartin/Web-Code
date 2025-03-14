@@ -8,16 +8,19 @@
 }
   /* Ajustar tamaño de imágenes */
   .carousel-inner img {
-    width: 200px; /* Ancho fijo */
-    height: 300px; /* Alto fijo */
-    object-fit: cover; /* Mantiene la proporción */
+    width: 100%; /* Mantener el ancho completo */
+    height: 700px; /* Aumentar la altura */
+    object-fit: cover; /* Para que la imagen se ajuste bien */
   }
+  
 
-  /* Hacer las flechas de navegación negras */
-  .carousel-control-prev-icon, .carousel-control-next-icon {
-
-    filter: invert(1); /* Convierte el color a negro */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 50px;  /* Aumenta el ancho */
+    height: 50px; /* Aumenta la altura */
+    background-size: 100% 100%; /* Ajusta el tamaño del ícono */
   }
+   
 
   .carousel-control-prev {
     left: -20px;
