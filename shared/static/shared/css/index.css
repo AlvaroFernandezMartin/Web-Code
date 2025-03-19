@@ -3,30 +3,35 @@
   margin: 0 auto; /* Centra el carrusel */
   padding: 20px; /* Espaciado interno para evitar que se vea muy apretado */
 }
+
 .container_carousel h1 {
   text-align: center;
 }
-  /* Ajustar tamaño de imágenes */
-  .carousel-inner img {
-    width: 100%; /* Mantener el ancho completo */
-    height: 700px; /* Aumentar la altura */
-    object-fit: cover; /* Para que la imagen se ajuste bien */
-  }
-  
 
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    width: 50px;  /* Aumenta el ancho */
-    height: 50px; /* Aumenta la altura */
-    background-size: 100% 100%; /* Ajusta el tamaño del ícono */
-  }
-   
+/* Ajustar tamaño de imágenes */
+.carousel-inner img {
+  width: 100%; /* Mantener el ancho completo */
+  height: 700px; /* Aumentar la altura */
+  object-fit: cover; /* Para que la imagen se ajuste bien */
+}
 
-  .carousel-control-prev {
-    left: -20px;
-  }
-  
-  .carousel-control-next {
-    right: -20px;
-  }
-  
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 50px; /* Aumenta el ancho */
+  height: 50px; /* Aumenta la altura */
+  background-size: 100% 100%; /* Ajusta el tamaño del ícono */
+}
+
+.carousel-control-prev {
+  left: -20px;
+}
+
+.carousel-control-next {
+  right: -20px;
+}
+
+/* Corregir la clase con el nombre correcto */
+.carousel-caption.carrousel-text {
+font-size: 0px;
+  bottom: 50%
+}

@@ -17,10 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-import shared.views
+import pages.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', shared.views.index, name='index'),
+    path('', pages.views.index, name='index'),
 
 ]
