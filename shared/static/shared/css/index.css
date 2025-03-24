@@ -1,25 +1,32 @@
-.container_carousel {
-  max-width: 600px; /* Reduce el tamaño del contenedor */
-  margin: 0 auto; /* Centra el carrusel */
-  padding: 20px; /* Espaciado interno para evitar que se vea muy apretado */
-}
-
-.container_carousel h1 {
-  text-align: center;
-}
-
-/* Ajustar tamaño de imágenes */
+/* Ajustar la imagen para que ocupe todo el ancho y tenga un aspecto adecuado */
 .carousel-inner img {
-  width: 100%; /* Mantener el ancho completo */
-  height: 700px; /* Aumentar la altura */
-  object-fit: cover; /* Para que la imagen se ajuste bien */
+  width: 100%;
+  height: 50vh; /* Ajusta la altura según tu preferencia */
+  object-fit: cover;
+  filter: brightness(65%);
 }
 
+/* Asegurarnos de que el texto se ajuste bien al contenedor */
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el texto */
+  color: white;
+  width: 100%;
+}
+
+.carrousel-text {
+  font-size: 20px;
+  max-width: 90%; /* Ajuste para que no se vea muy grande */
+}
+
+/* Para los controles del carrusel */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  width: 50px; /* Aumenta el ancho */
-  height: 50px; /* Aumenta la altura */
-  background-size: 100% 100%; /* Ajusta el tamaño del ícono */
+  width: 50px;
+  height: 50px;
+  background-size: 100% 100%;
 }
 
 .carousel-control-prev {
@@ -30,8 +37,21 @@
   right: -20px;
 }
 
-/* Corregir la clase con el nombre correcto */
-.carousel-caption.carrousel-text {
-font-size: 0px;
-  bottom: 50%
+.clients_logo{
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
 }
+
+
+
+/* Ajustar el tamaño de la fuente en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .carrousel-text h2 {
+    font-size: 1.5rem; /* Reduce el tamaño en pantallas pequeñas */
+  }
+  .carrousel-text p {
+    font-size: 1rem;
+  }
+}
+

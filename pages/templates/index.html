@@ -10,38 +10,64 @@
     <!-- Camareros -->
     <div class="carousel-item active">
       <img src="{% static 'shared/img/waiter.jpg' %}" class="d-block w-100" style="object-position: 50% 10%" alt="Waiters">
-      <div class=" row carousel-caption d-none d-md-block carrousel-text ">
-        <div class="col-3">
-          <h3>Custom Apparel for Waitstaff</h3>
-          <p>We specialize in creating durable and stylish uniforms for waiters, ensuring comfort and a professional appearance for every service.</p>
+      <div class="carousel-caption d-block carrousel-text">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 text-center">
+              <h2>Custom Apparel for Waitstaff</h2>
+              <p>We specialize in creating durable and stylish uniforms for waiters, ensuring comfort and a professional appearance for every service.</p>
+              <button class="btn btn-primary">Learn More</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Trabajadores de la construcción -->
-    <div class="carousel-item ">
+    <div class="carousel-item">
       <img src="{% static 'shared/img/construction_workers.jpg' %}" class="d-block w-100" alt="Construction Workers">
-      <div class="carousel-caption d-none d-md-block carrousel-text">
-        <h3>Tough Uniforms for Construction Workers</h3>
-        <p>Our custom workwear is designed for construction professionals who need durability, comfort, and flexibility to handle the toughest jobs.</p>
+      <div class="carousel-caption d-block carrousel-text">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 text-center">
+              <h2>Tough Uniforms for Construction Workers</h2>
+              <p>Our custom workwear is designed for construction professionals who need durability, comfort, and flexibility to handle the toughest jobs.</p>
+              <button class="btn btn-primary">Learn More</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Trabajadores de hotel -->
     <div class="carousel-item">
       <img src="{% static 'shared/img/hotel_workers.jpg' %}" class="d-block w-100" alt="Hotel Workers">
-      <div class="carousel-caption d-none d-md-block carrousel-text">
-        <h3>Elegant and Professional Uniforms for Hotel Staff</h3>
-        <p>We provide high-quality, custom uniforms for hotel staff that blend elegance with practicality, ensuring your team looks and feels their best.</p>
+      <div class="carousel-caption d-block carrousel-text">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 text-center">
+              <h2>Elegant and Professional Uniforms for Hotel Staff</h2>
+              <p>We provide high-quality, custom uniforms for hotel staff that blend elegance with practicality, ensuring your team looks and feels their best.</p>
+              <button class="btn btn-primary">Learn More</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     
     <!-- ONU -->
-    <div class="carousel-item ">
+    <div class="carousel-item">
       <img src="{% static 'shared/img/ONU.avif' %}" class="d-block w-100" alt="ONU">
-      <div class="carousel-caption d-none d-md-block carrousel-text">
-        <h3>Bensons Workwear has been a trusted uniform manufacturer, counting prestigious Clients</h3>
-        <p>Our commitment to quality and excellence has earned us the trust of renowned organizations across Ireland.</p>
+      <div class="carousel-caption d-block carrousel-text">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 text-center">
+              <h2>Bensons Workwear has been a trusted uniform manufacturer, counting prestigious Clients</h2>
+              <p>Our commitment to quality and excellence has earned us the trust of renowned organizations across Ireland.</p>
+              <button class="btn btn-primary">Learn More</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -57,92 +83,204 @@
   </button>
 </div>
 
-<div class="container-fluid vh-100 d-flex flex-column">
+<div class="container-fluid  d-flex flex-column">
   <div class="row flex-grow-1">
-    <div class="col-md-3 bg-danger d-flex "></div>
-    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center"></div>
-    <div class="col-md-3 bg-danger d-flex"></div>
+    <div class="col-md-3  d-flex ">
+
+    </div>
+    <div class="col-md-6 d-flex flex-column ">
+      <div class="container mt-4">
+        <!-- Botones para seleccionar el grupo de cartas -->
+        <div class="mb-4 text-center">
+          <button class="btn btn-primary" onclick="filterCards('workwear')">Workwear</button>
+          <button class="btn btn-secondary" onclick="filterCards('casual')">Hospitality Uniforms</button>
+          <button class="btn btn-success" onclick="filterCards('suits')">Suits</button>
+        </div>
+      
+        <!-- Contenedor de cartas -->
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 g-4" id="card-container">
+          <!-- Cartas de Ropa de Trabajo -->
+          <div class="col workwear d-none">
+            <div class="card">
+              <img src="{% static 'shared/img/clothes/workwear/Flex trousers.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 1">
+              <div class="card-body">
+                <h5 class="card-title">Flex trousers</h5>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col workwear d-none">
+            <div class="card">
+              <img src="{% static 'shared/img/clothes/workwear/Trade air-layer hoodie.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 2">
+              <div class="card-body">
+                <h5 class="card-title">Trade air-layer hoodie</h5>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col workwear d-none">
+            <div class="card">
+              <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
+              <div class="card-body">
+                <h5 class="card-title">Trade active polo</h5>
+              </div>
+            </div>
+          </div>
+      
+
+      
+          <!-- Hospitality Uniforms -->
+          <div class="col casual d-none">
+            <div class="card">
+              <img src="{% static 'shared/img/clothes/Hospitality service/apron.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 1">
+              <div class="card-body">
+                <h5 class="card-title">Ropa Casual 1</h5>
+                <p class="card-text">Descripción de ropa casual 1.</p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col casual d-none">
+            <div class="card">
+              <img src="{% static 'shared/img/clothes/Hospitality service/Chef_short_sleeve_jacket.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 2">
+              <div class="card-body">
+                <h5 class="card-title">Ropa Casual 2</h5>
+                <p class="card-text">Descripción de ropa casual 2.</p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col casual d-none">
+            <div class="card">
+              <img src="{% static 'shared/img/clothes/Hospitality service/chef_jacket.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 3">
+              <div class="card-body">
+                <h5 class="card-title">Ropa Casual 3</h5>
+                <p class="card-text">Descripción de ropa casual 3.</p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col casual d-none">
+            <div class="card">
+              <img src="{% static 'shared/img/clothes/Hospitality service/craft apron.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 4">
+              <div class="card-body">
+                <h5 class="card-title">Ropa Casual 4</h5>
+                <p class="card-text">Descripción de ropa casual 4.</p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Cartas de Trajes -->
+          <div class="col suits d-none">
+            <div class="card">
+              <img src="{% static 'shared/img/clothes/suits/suits1.webp' %}" class="card-img-top img-fluid" alt="Traje 1">
+              <div class="card-body">
+                <h5 class="card-title">Traje 1</h5>
+                <p class="card-text">Descripción de traje 1.</p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col suits d-none">
+            <div class="card">
+              <img src="{% static 'shared/img/clothes/suits/suits2.webp' %}" class="card-img-top img-fluid" alt="Traje 2">
+              <div class="card-body">
+                <h5 class="card-title">Traje 2</h5>
+                <p class="card-text">Descripción de traje 2.</p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col suits d-none">
+            <div class="card">
+              <img src="{% static 'shared/img/clothes/suits/suits3.webp' %}" class="card-img-top img-fluid" alt="Traje 3">
+              <div class="card-body">
+                <h5 class="card-title">Traje 3</h5>
+                <p class="card-text">Descripción de traje 3.</p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col suits d-none">
+            <div class="card">
+              <img src="{% static 'shared/img/clothes/suits/suits4.webp' %}" class="card-img-top img-fluid" alt="Traje 4">
+              <div class="card-body">
+                <h5 class="card-title">Traje 4</h5>
+                <p class="card-text">Descripción de traje 4.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <h2 class="text-center mt-4">Our Clients</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="{% static 'shared/img/clients/CastleMartyr Resort.avif' %}" class="clients_logo" alt="ONU">
+          </div>
+          <div class="col-md-4">
+            <img src="{% static 'shared/img/clients/Fota Island Resort.avif' %}" class="clients_logo" alt="UNICEF">
+          </div>
+          <div class="col-md-4">
+            <img src="{% static 'shared/img/clients/The Green Hotel.avif' %}" class="clients_logo" alt="WHO">
+          </div>
+        </div>
+      </div> 
+
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{% static 'shared/img/clients/LMETB.avif' %}" class="clients_logo" alt="WHO">
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'shared/img/clients/Kilronan Castle Estate & Spa.avif' %}" class="clients_logo" alt="WHO">
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'shared/img/clients/Mearas Garden Center.avif' %}" class="clients_logo" alt="WHO">
+        </div>
+      </div> 
+
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{% static 'shared/img/clients/Radisson Blu Hotels.avif' %}" class="clients_logo" alt="WHO">
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'shared/img/clients/Reardens Group.avif' %}" class="clients_logo" alt="WHO">
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'shared/img/clients/Teagasc.avif' %}" class="clients_logo" alt="WHO">
+        </div>
+      </div>  
+      
+      <script>
+        // Función para filtrar las cartas por grupo
+        function filterCards(group) {
+          // Obtener todas las cartas
+          const allCards = document.querySelectorAll('#card-container .col');
+          
+          // Mostrar todas las cartas y luego ocultar las que no correspondan al grupo
+          allCards.forEach(card => {
+            if (card.classList.contains(group)) {
+              card.classList.remove('d-none'); // Mostrar cartas que coinciden con el grupo
+            } else {
+              card.classList.add('d-none'); // Ocultar cartas que no coinciden con el grupo
+            }
+          });
+        }
+      
+        // Mostrar por defecto un grupo (por ejemplo, Ropa de Trabajo) al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+          filterCards('workwear');
+        });
+      </script>
+    </div>
+    <div class="col-md-3  d-flex">
+
+    </div>
   </div>
 </div>
 
-{% comment %} 
-<div class="container container_carousel">
-  <h1>Our Services</h1>
-  <div id="servicesCarousel" class="carousel slide">
-    <!-- Indicadores -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-    </div>
-
-    <!-- Carrusel -->
-    <div class="carousel-inner">
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="row align-items-center">
-          <div class="col-md-6 text-center">
-            <img src="{% static 'shared/img/maquina_costurera.avif' %}" alt="Uniform Manufacturing">
-          </div>
-          <div class="col-md-6 p-4">
-            <h5 class="text-black">Uniform Manufacturing</h5>
-            <p class="text-black">We specialise in high-quality uniform manufacturing, delivering tailored solutions for diverse industries.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="row align-items-center">
-          <div class="col-md-6 text-center">
-            <img src="{% static 'shared/img/pasarela.avif' %}" alt="Bespoke Designs">
-          </div>
-          <div class="col-md-6 p-4">
-            <h5 class="text-black">Bespoke Designs</h5>
-            <p class="text-black">We specialise in bespoke designs that cater to the unique needs of your organisation. Our high-quality uniforms, footwear, and accessories are crafted with durability, comfort, and style in mind. We take pride in creating professional attire that not only meets industry standards but also reflects your brand’s identity.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <div class="row align-items-center">
-          <div class="col-md-6 text-center">
-            <img src="{% static 'shared/img/maquina_costurera.avif' %}" alt="Unique Embroidery">
-          </div>
-          <div class="col-md-6 p-4">
-            <h5 class="text-black">Unique Embroidery</h5>
-            <p class="text-black">We offer unique embroidery services that enhance your brand identity. Our skilled team utilises advanced techniques to create vibrant, detailed designs on a variety of fabrics. Whether for uniforms, promotional items, or corporate apparel, our custom embroidery adds a professional touch that sets your team apart.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 4 -->
-      <div class="carousel-item">
-        <div class="row align-items-center">
-          <div class="col-md-6 text-center">
-            <img src="{% static 'shared/img/maquina_serigrafia.avif' %}" alt="Silk Screen Printing">
-          </div>
-          <div class="col-md-6 p-4">
-            <h5 class="text-black">Silk Screen Printing</h5>
-            <p class="text-black">Our specialised silk screen printing services deliver high-quality, vibrant designs that stand out. Ideal for uniforms, promotional products, and corporate apparel, our technique ensures durability and precision, allowing your brand’s message to shine through on any fabric. Trust us to bring your vision to life with expert craftsmanship and attention to detail.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Controles -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div> 
-{% endcomment %}
-
 {% endblock %}
+
+

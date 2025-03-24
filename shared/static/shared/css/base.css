@@ -12,6 +12,7 @@ html, body {
 
 footer {
     flex-shrink: 0;
+    
 }
 
 /* General styles and navigation */
@@ -46,6 +47,13 @@ footer a:hover {
 }
 
 .logo-footer:hover {
-    filter: brightness(0.7);
     transform: scale(1.1);
+}
+
+li.nav-item {
+    font-size: 20px;
+    margin-right: 20px;
+}
+.prueba{
+    margin-right:  10%;
 }
