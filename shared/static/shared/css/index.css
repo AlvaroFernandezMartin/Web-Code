@@ -43,8 +43,26 @@
   margin-bottom: 30px;
 }
 
+.separador{
+  background-color: rgba(40, 38, 86, 1); 
+  color: white;
+}
 
+.separador h1{
+  padding-top: 50px;
+  color: #ffde44;
+}
+.separador p{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
+.prueba{
+  color: white;
+  background-color: black;
+  font-size: 30px;
+  font: bolder;
+}
 /* Ajustar el tamaño de la fuente en pantallas más pequeñas */
 @media (max-width: 768px) {
   .carrousel-text h2 {

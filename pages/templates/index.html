@@ -3,6 +3,8 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'shared/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'shared/css/carrousel_button.css' %}">
+
 
 <div id="carouselSwipe" class="carousel slide" data-bs-touch="true" data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -16,7 +18,14 @@
             <div class="col-12 col-md-8 text-center">
               <h2>Custom Apparel for Waitstaff</h2>
               <p>We specialize in creating durable and stylish uniforms for waiters, ensuring comfort and a professional appearance for every service.</p>
-              <button class="btn btn-primary">Learn More</button>
+
+                <a class="btnfos btnfos-1 " >
+                    <svg>
+                        <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+                    </svg>
+                    Learn More
+                </a> 
+
             </div>
           </div>
         </div>
@@ -32,7 +41,12 @@
             <div class="col-12 col-md-8 text-center">
               <h2>Tough Uniforms for Construction Workers</h2>
               <p>Our custom workwear is designed for construction professionals who need durability, comfort, and flexibility to handle the toughest jobs.</p>
-              <button class="btn btn-primary">Learn More</button>
+                <a class="btnfos btnfos-1 " >
+                  <svg>
+                      <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+                  </svg>
+                  Learn More
+                </a> 
             </div>
           </div>
         </div>
@@ -48,7 +62,12 @@
             <div class="col-12 col-md-8 text-center">
               <h2>Elegant and Professional Uniforms for Hotel Staff</h2>
               <p>We provide high-quality, custom uniforms for hotel staff that blend elegance with practicality, ensuring your team looks and feels their best.</p>
-              <button class="btn btn-primary">Learn More</button>
+                <a class="btnfos btnfos-1 " >
+                  <svg>
+                      <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+                  </svg>
+                  Learn More
+                </a> 
             </div>
           </div>
         </div>
@@ -64,7 +83,12 @@
             <div class="col-12 col-md-8 text-center">
               <h2>Bensons Workwear has been a trusted uniform manufacturer, counting prestigious Clients</h2>
               <p>Our commitment to quality and excellence has earned us the trust of renowned organizations across Ireland.</p>
-              <button class="btn btn-primary">Learn More</button>
+                <a class="btnfos btnfos-1 " >
+                  <svg>
+                      <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+                  </svg>
+                  Learn More
+                </a> 
             </div>
           </div>
         </div>
@@ -83,6 +107,17 @@
   </button>
 </div>
 
+<div class="container-fluid separador">
+  <h1 class="text-center ">More than uniforms</h1>
+  <p class="text-center ">At Bensons Corporatewear, we collaborate with you to create corporate attire for your employees that reflects and strengthens your company’s values and identity <p>
+</div>
+
+<div class="row "> 
+  <div class= "container col-2 text-center prueba">
+    Our clothing collection
+  </div>
+</div>  
+
 <div class="container-fluid  d-flex flex-column">
   <div class="row flex-grow-1">
     <div class="col-md-3  d-flex ">
@@ -93,7 +128,7 @@
         <!-- Botones para seleccionar el grupo de cartas -->
         <div class="mb-4 text-center">
           <button class="btn btn-primary" onclick="filterCards('workwear')">Workwear</button>
-          <button class="btn btn-secondary" onclick="filterCards('casual')">Hospitality Uniforms</button>
+          <button class="btn btn-secondary" onclick="filterCards('hospitality_uniforms')">Hospitality Uniforms</button>
           <button class="btn btn-success" onclick="filterCards('suits')">Suits</button>
         </div>
       
@@ -130,7 +165,7 @@
 
       
           <!-- Hospitality Uniforms -->
-          <div class="col casual d-none">
+          <div class="col hospitality_uniforms d-none">
             <div class="card">
               <img src="{% static 'shared/img/clothes/Hospitality service/apron.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 1">
               <div class="card-body">
@@ -140,7 +175,7 @@
             </div>
           </div>
       
-          <div class="col casual d-none">
+          <div class="col hospitality_uniforms d-none">
             <div class="card">
               <img src="{% static 'shared/img/clothes/Hospitality service/Chef_short_sleeve_jacket.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 2">
               <div class="card-body">
@@ -150,7 +185,7 @@
             </div>
           </div>
       
-          <div class="col casual d-none">
+          <div class="col hospitality_uniforms d-none">
             <div class="card">
               <img src="{% static 'shared/img/clothes/Hospitality service/chef_jacket.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 3">
               <div class="card-body">
@@ -160,7 +195,7 @@
             </div>
           </div>
       
-          <div class="col casual d-none">
+          <div class="col hospitality_uniforms d-none">
             <div class="card">
               <img src="{% static 'shared/img/clothes/Hospitality service/craft apron.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 4">
               <div class="card-body">
@@ -282,5 +317,4 @@
 </div>
 
 {% endblock %}
-
 
