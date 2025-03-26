@@ -112,24 +112,30 @@
   <p class="text-center ">At Bensons Corporatewear, we collaborate with you to create corporate attire for your employees that reflects and strengthens your company’s values and identity <p>
 </div>
 
-<div class="row "> 
-  <div class= "container col-2 text-center prueba">
-    Our clothing collection
-  </div>
-</div>  
+
 
 <div class="container-fluid  d-flex flex-column">
   <div class="row flex-grow-1">
+    <!-- Columana IZQ -->
     <div class="col-md-3  d-flex ">
 
     </div>
+    <!-- Columana Cental -->
     <div class="col-md-6 d-flex flex-column ">
+
+      <div class="row "> 
+        <div class= "container col-4 text-center prueba">
+          Our clothing collection
+        </div>
+      </div>  
+
+      <!-- Cartas ropa -->
       <div class="container mt-4">
         <!-- Botones para seleccionar el grupo de cartas -->
         <div class="mb-4 text-center">
-          <button class="btn btn-primary" onclick="filterCards('workwear')">Workwear</button>
-          <button class="btn btn-secondary" onclick="filterCards('hospitality_uniforms')">Hospitality Uniforms</button>
-          <button class="btn btn-success" onclick="filterCards('suits')">Suits</button>
+          <button class="filter-btn" onclick="filterCards('workwear', this)">Workwear</button>
+          <button class="filter-btn" onclick="filterCards('hospitality_uniforms', this)">Hospitality Uniforms</button>
+          <button class="filter-btn" onclick="filterCards('suits', this)">Suits</button>
         </div>
       
         <!-- Contenedor de cartas -->
@@ -153,6 +159,15 @@
             </div>
           </div>
       
+          <div class="col workwear d-none">
+            <div class="card">
+              <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
+              <div class="card-body">
+                <h5 class="card-title">Trade active polo</h5>
+              </div>
+            </div>
+          </div>
+
           <div class="col workwear d-none">
             <div class="card">
               <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
@@ -248,73 +263,104 @@
         </div>
       </div>
       
+        <!-- logos y Testimonios -->
+       <section class="container my-5">
+          <h2 class="text-center mt-4">Our Clients</h2>
       
-      <h2 class="text-center mt-4">Our Clients</h2>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <img src="{% static 'shared/img/clients/CastleMartyr Resort.avif' %}" class="clients_logo" alt="ONU">
+          <!-- Galería de logos -->
+          <div class="container text-center">
+              <div class="row">
+                  <div class="col-md-4">
+                      <img src="{% static 'shared/img/clients/CastleMartyr Resort.avif' %}" class="clients_logo" alt="CastleMartyr Resort">
+                  </div>
+                  <div class="col-md-4">
+                      <img src="{% static 'shared/img/clients/Fota Island Resort.avif' %}" class="clients_logo" alt="Fota Island Resort">
+                  </div>
+                  <div class="col-md-4">
+                      <img src="{% static 'shared/img/clients/The Green Hotel.avif' %}" class="clients_logo" alt="The Green Hotel">
+                  </div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-4">
+                      <img src="{% static 'shared/img/clients/LMETB.avif' %}" class="clients_logo" alt="LMETB">
+                  </div>
+                  <div class="col-md-4">
+                      <img src="{% static 'shared/img/clients/Kilronan Castle Estate & Spa.avif' %}" class="clients_logo" alt="Kilronan Castle Estate & Spa">
+                  </div>
+                  <div class="col-md-4">
+                      <img src="{% static 'shared/img/clients/Mearas Garden Center.avif' %}" class="clients_logo" alt="Mearas Garden Center">
+                  </div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-4">
+                      <img src="{% static 'shared/img/clients/Radisson Blu Hotels.avif' %}" class="clients_logo" alt="Radisson Blu Hotels">
+                  </div>
+                  <div class="col-md-4">
+                      <img src="{% static 'shared/img/clients/Reardens Group.avif' %}" class="clients_logo" alt="Reardens Group">
+                  </div>
+                  <div class="col-md-4">
+                      <img src="{% static 'shared/img/clients/Teagasc.avif' %}" class="clients_logo" alt="Teagasc">
+                  </div>
+              </div>
           </div>
-          <div class="col-md-4">
-            <img src="{% static 'shared/img/clients/Fota Island Resort.avif' %}" class="clients_logo" alt="UNICEF">
-          </div>
-          <div class="col-md-4">
-            <img src="{% static 'shared/img/clients/The Green Hotel.avif' %}" class="clients_logo" alt="WHO">
-          </div>
-        </div>
-      </div> 
-
-      <div class="row">
-        <div class="col-md-4">
-          <img src="{% static 'shared/img/clients/LMETB.avif' %}" class="clients_logo" alt="WHO">
-        </div>
-        <div class="col-md-4">
-          <img src="{% static 'shared/img/clients/Kilronan Castle Estate & Spa.avif' %}" class="clients_logo" alt="WHO">
-        </div>
-        <div class="col-md-4">
-          <img src="{% static 'shared/img/clients/Mearas Garden Center.avif' %}" class="clients_logo" alt="WHO">
-        </div>
-      </div> 
-
-      <div class="row">
-        <div class="col-md-4">
-          <img src="{% static 'shared/img/clients/Radisson Blu Hotels.avif' %}" class="clients_logo" alt="WHO">
-        </div>
-        <div class="col-md-4">
-          <img src="{% static 'shared/img/clients/Reardens Group.avif' %}" class="clients_logo" alt="WHO">
-        </div>
-        <div class="col-md-4">
-          <img src="{% static 'shared/img/clients/Teagasc.avif' %}" class="clients_logo" alt="WHO">
-        </div>
-      </div>  
       
-      <script>
-        // Función para filtrar las cartas por grupo
-        function filterCards(group) {
-          // Obtener todas las cartas
-          const allCards = document.querySelectorAll('#card-container .col');
-          
-          // Mostrar todas las cartas y luego ocultar las que no correspondan al grupo
-          allCards.forEach(card => {
-            if (card.classList.contains(group)) {
-              card.classList.remove('d-none'); // Mostrar cartas que coinciden con el grupo
-            } else {
-              card.classList.add('d-none'); // Ocultar cartas que no coinciden con el grupo
-            }
-          });
-        }
+          <!-- Testimonios -->
+          <h2 class="text-center mt-5">Testimonials</h2>
+          <div id="carouselTestimonios" class="carousel slide mt-4" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                  <div class="carousel-item active text-center">
+                      <p class="lead">"Fota Island Resort is very happy to have a successful business relationship with Bensons Corporatewear. The quality and level of finish of the uniforms provided by Bensons is fantastic and their customer service is excellent. They are very responsive, attentive and provide a quick turnaround on all orders."</p>
+                      <h5>- Charlie Dineen, HR Director, Fota Island Resort</h5>
+                      <p>★★★★★</p>
+                  </div>
+                  <div class="carousel-item text-center">
+                      <p class="lead">"I reached out to Bensons to support with uniforms for The Green Hotel which re-opened in August 2022. The team have been a fantastic support and with a very short deadline managed to deliver excellent quality items on time. I would highly recommend especially for bespoke items where you really want to create your own unique style."</p>
+                      <h5>- Sam Shepard, Group Director, O'Callaghan Collection</h5>
+                      <p>★★★★★</p>
+                  </div>
+                  <div class="carousel-item text-center">
+                      <p class="lead">"Jess was a pleasure to deal with. All requests & emails were dealt with promptly. Samples were sent out within a week & when order sent in. Delivery of all uniforms was within the scheduled time. After delivery Jess followed up again. I am delighted with the service & will definitely be using again for our uniforms."</p>
+                      <h5>- Clare Horgan, Sales & Marketing Manager, Kilronan Castle Estate & Spa</h5>
+                      <p>★★★★★</p>
+                  </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonios" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonios" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+              </button>
+          </div>
+      </section>
       
-        // Mostrar por defecto un grupo (por ejemplo, Ropa de Trabajo) al cargar la página
-        document.addEventListener('DOMContentLoaded', function() {
-          filterCards('workwear');
-        });
-      </script>
     </div>
+    <!-- Columana DER -->
     <div class="col-md-3  d-flex">
 
     </div>
   </div>
 </div>
 
+
+<script>
+  function filterCards(group, button) {
+    // Ocultar todas las tarjetas
+    document.querySelectorAll('#card-container .col').forEach(card => {
+      card.classList.toggle('d-none', !card.classList.contains(group));
+    });
+
+    // Remover la clase "active-btn" de todos los botones
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active-btn'));
+
+    // Agregar la clase "active-btn" al botón seleccionado
+    button.classList.add('active-btn');
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Selecciona el primer grupo por defecto
+    const defaultButton = document.querySelector('.filter-btn');
+    filterCards('workwear', defaultButton);
+  });
+</script>
 {% endblock %}
 

@@ -58,10 +58,35 @@
 }
 
 .prueba{
-  color: white;
-  background-color: black;
+  color: black;
   font-size: 30px;
   font: bolder;
+}
+
+.clients_logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+
+.filter-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #bbb;
+}
+
+.active-btn {
+  background-color: gold !important;
+  color: black;
+  font-weight: bold;
 }
 /* Ajustar el tamaño de la fuente en pantallas más pequeñas */
 @media (max-width: 768px) {
@@ -72,4 +97,7 @@
     font-size: 1rem;
   }
 }
+
+
+
 
