@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'shared/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'shared/css/carrousel_button.css' %}">
+
+
+{% include 'shared/filter_cards.html' %}
+
+
+
+<script>
+  function filterCards(group, button) {
+    // Ocultar todas las tarjetas
+    document.querySelectorAll('#card-container .col').forEach(card => {
+      card.classList.toggle('d-none', !card.classList.contains(group));
+    });
+
+    // Remover la clase "active-btn" de todos los botones
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active-btn'));
+
+    // Agregar la clase "active-btn" al botón seleccionado
+    button.classList.add('active-btn');
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Selecciona el primer grupo por defecto
+    const defaultButton = document.querySelector('.filter-btn');
+    filterCards('workwear', defaultButton);
+  });
+</script>
+{% endblock %}
+

@@ -40,7 +40,7 @@
           <div class="row justify-content-center">
             <div class="col-12 col-md-8 text-center">
               <h2>Tough Uniforms for Construction Workers</h2>
-              <p>Our custom workwear is designed for construction professionals who need durability, comfort, and flexibility to handle the toughest jobs.</p>
+              <p>Our custom workwear is designed for durability, comfort, and flexibility to handle the toughest jobs.</p>
                 <a class="btnfos btnfos-1 " >
                   <svg>
                       <rect x="0" y="0" fill="none" width="100%" height="100%"/>
@@ -61,7 +61,7 @@
           <div class="row justify-content-center">
             <div class="col-12 col-md-8 text-center">
               <h2>Elegant and Professional Uniforms for Hotel Staff</h2>
-              <p>We provide high-quality, custom uniforms for hotel staff that blend elegance with practicality, ensuring your team looks and feels their best.</p>
+              <p>We provide high-quality, custom uniforms for hotel staff that blend elegance with practicality.</p>
                 <a class="btnfos btnfos-1 " >
                   <svg>
                       <rect x="0" y="0" fill="none" width="100%" height="100%"/>
@@ -75,7 +75,7 @@
     </div>
     
     <!-- ONU -->
-    <div class="carousel-item">
+    {% comment %} <div class="carousel-item">
       <img src="{% static 'shared/img/ONU.avif' %}" class="d-block w-100" alt="ONU">
       <div class="carousel-caption d-block carrousel-text">
         <div class="container">
@@ -93,7 +93,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> {% endcomment %}
   </div>
 
   <!-- Botones de navegación -->
@@ -110,6 +110,11 @@
 <div class="container-fluid separador">
   <h1 class="text-center ">More than uniforms</h1>
   <p class="text-center ">At Bensons Corporatewear, we collaborate with you to create corporate attire for your employees that reflects and strengthens your company’s values and identity <p>
+  <div class="row "> 
+    <div class= "container col-4 text-center ">
+      <h2 >Our clothing collection</h2>
+    </div>
+  </div>  
 </div>
 
 
@@ -123,144 +128,12 @@
     <!-- Columana Cental -->
     <div class="col-md-6 d-flex flex-column ">
 
-      <div class="row "> 
-        <div class= "container col-4 text-center prueba">
-          Our clothing collection
-        </div>
-      </div>  
+
 
       <!-- Cartas ropa -->
       <div class="container mt-4">
-        <!-- Botones para seleccionar el grupo de cartas -->
-        <div class="mb-4 text-center">
-          <button class="filter-btn" onclick="filterCards('workwear', this)">Workwear</button>
-          <button class="filter-btn" onclick="filterCards('hospitality_uniforms', this)">Hospitality Uniforms</button>
-          <button class="filter-btn" onclick="filterCards('suits', this)">Suits</button>
-        </div>
-      
-        <!-- Contenedor de cartas -->
-        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 g-4" id="card-container">
-          <!-- Cartas de Ropa de Trabajo -->
-          <div class="col workwear d-none">
-            <div class="card">
-              <img src="{% static 'shared/img/clothes/workwear/Flex trousers.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 1">
-              <div class="card-body">
-                <h5 class="card-title">Flex trousers</h5>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col workwear d-none">
-            <div class="card">
-              <img src="{% static 'shared/img/clothes/workwear/Trade air-layer hoodie.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 2">
-              <div class="card-body">
-                <h5 class="card-title">Trade air-layer hoodie</h5>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col workwear d-none">
-            <div class="card">
-              <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
-              <div class="card-body">
-                <h5 class="card-title">Trade active polo</h5>
-              </div>
-            </div>
-          </div>
+        {% include 'shared/filter_cards.html' %}
 
-          <div class="col workwear d-none">
-            <div class="card">
-              <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
-              <div class="card-body">
-                <h5 class="card-title">Trade active polo</h5>
-              </div>
-            </div>
-          </div>
-      
-
-      
-          <!-- Hospitality Uniforms -->
-          <div class="col hospitality_uniforms d-none">
-            <div class="card">
-              <img src="{% static 'shared/img/clothes/Hospitality service/apron.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 1">
-              <div class="card-body">
-                <h5 class="card-title">Ropa Casual 1</h5>
-                <p class="card-text">Descripción de ropa casual 1.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col hospitality_uniforms d-none">
-            <div class="card">
-              <img src="{% static 'shared/img/clothes/Hospitality service/Chef_short_sleeve_jacket.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 2">
-              <div class="card-body">
-                <h5 class="card-title">Ropa Casual 2</h5>
-                <p class="card-text">Descripción de ropa casual 2.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col hospitality_uniforms d-none">
-            <div class="card">
-              <img src="{% static 'shared/img/clothes/Hospitality service/chef_jacket.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 3">
-              <div class="card-body">
-                <h5 class="card-title">Ropa Casual 3</h5>
-                <p class="card-text">Descripción de ropa casual 3.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col hospitality_uniforms d-none">
-            <div class="card">
-              <img src="{% static 'shared/img/clothes/Hospitality service/craft apron.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 4">
-              <div class="card-body">
-                <h5 class="card-title">Ropa Casual 4</h5>
-                <p class="card-text">Descripción de ropa casual 4.</p>
-              </div>
-            </div>
-          </div>
-      
-          <!-- Cartas de Trajes -->
-          <div class="col suits d-none">
-            <div class="card">
-              <img src="{% static 'shared/img/clothes/suits/suits1.webp' %}" class="card-img-top img-fluid" alt="Traje 1">
-              <div class="card-body">
-                <h5 class="card-title">Traje 1</h5>
-                <p class="card-text">Descripción de traje 1.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col suits d-none">
-            <div class="card">
-              <img src="{% static 'shared/img/clothes/suits/suits2.webp' %}" class="card-img-top img-fluid" alt="Traje 2">
-              <div class="card-body">
-                <h5 class="card-title">Traje 2</h5>
-                <p class="card-text">Descripción de traje 2.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col suits d-none">
-            <div class="card">
-              <img src="{% static 'shared/img/clothes/suits/suits3.webp' %}" class="card-img-top img-fluid" alt="Traje 3">
-              <div class="card-body">
-                <h5 class="card-title">Traje 3</h5>
-                <p class="card-text">Descripción de traje 3.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col suits d-none">
-            <div class="card">
-              <img src="{% static 'shared/img/clothes/suits/suits4.webp' %}" class="card-img-top img-fluid" alt="Traje 4">
-              <div class="card-body">
-                <h5 class="card-title">Traje 4</h5>
-                <p class="card-text">Descripción de traje 4.</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       
         <!-- logos y Testimonios -->

@@ -58,7 +58,6 @@
 }
 
 .prueba{
-  color: black;
   font-size: 30px;
   font: bolder;
 }
@@ -96,7 +95,34 @@
   .carrousel-text p {
     font-size: 1rem;
   }
+  /* Para los botones de filtro */
+
+  .filter-btn {
+    font-size: 0.8rem;  /* Reducir el tamaño de la fuente */
+    padding: 8px 16px;  /* Reducir los márgenes */
+  }
+
+  /* Apilar los logos en 3 por fila */
+  .clients_logo {
+    flex: 1 0 70%;  /* Esto hará que cada logo ocupe un tercio del ancho disponible */
+    max-width: 70%;
+  }
+
+  /* Asegurarnos de que los logos se alineen correctamente */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col-md-4 {
+    flex: 1 0 33%; /* Cada logo ocupará un 33% del ancho de la fila */
+    max-width: 33%;
+    padding: 10px;
+  }
+
 }
+
 
 
 

@@ -1,0 +1,132 @@
+<!-- templates/shared/_filter_cards.html -->
+<!-- Botones para seleccionar el grupo de cartas -->
+{% load static %}
+<div class="mb-4 text-center">
+    <button class="filter-btn" onclick="filterCards('workwear', this)">Workwear</button>
+    <button class="filter-btn" onclick="filterCards('hospitality_uniforms', this)">Hospitality Uniforms</button>
+    <button class="filter-btn" onclick="filterCards('suits', this)">Suits</button>
+    </div>
+
+    <!-- Contenedor de cartas -->
+    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 g-4" id="card-container">
+    <!-- Cartas de Ropa de Trabajo -->
+    <div class="col workwear d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/workwear/Flex trousers.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 1">
+        <div class="card-body">
+            <h5 class="card-title">Flex trousers</h5>
+        </div>
+        </div>
+    </div>
+
+    <div class="col workwear d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/workwear/Trade air-layer hoodie.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 2">
+        <div class="card-body">
+            <h5 class="card-title">Trade air-layer hoodie</h5>
+        </div>
+        </div>
+    </div>
+
+    <div class="col workwear d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
+        <div class="card-body">
+            <h5 class="card-title">Trade active polo</h5>
+        </div>
+        </div>
+    </div>
+
+    <div class="col workwear d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
+        <div class="card-body">
+            <h5 class="card-title">Trade active polo</h5>
+        </div>
+        </div>
+    </div>
+
+
+
+    <!-- Hospitality Uniforms -->
+    <div class="col hospitality_uniforms d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/Hospitality service/apron.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 1">
+        <div class="card-body">
+            <h5 class="card-title">Ropa Casual 1</h5>
+            <p class="card-text">Descripción de ropa casual 1.</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="col hospitality_uniforms d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/Hospitality service/Chef_short_sleeve_jacket.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 2">
+        <div class="card-body">
+            <h5 class="card-title">Ropa Casual 2</h5>
+            <p class="card-text">Descripción de ropa casual 2.</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="col hospitality_uniforms d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/Hospitality service/chef_jacket.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 3">
+        <div class="card-body">
+            <h5 class="card-title">Ropa Casual 3</h5>
+            <p class="card-text">Descripción de ropa casual 3.</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="col hospitality_uniforms d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/Hospitality service/craft apron.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 4">
+        <div class="card-body">
+            <h5 class="card-title">Ropa Casual 4</h5>
+            <p class="card-text">Descripción de ropa casual 4.</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- Cartas de Trajes -->
+    <div class="col suits d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/suits/suits1.webp' %}" class="card-img-top img-fluid" alt="Traje 1">
+        <div class="card-body">
+            <h5 class="card-title">Traje 1</h5>
+            <p class="card-text">Descripción de traje 1.</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="col suits d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/suits/suits2.webp' %}" class="card-img-top img-fluid" alt="Traje 2">
+        <div class="card-body">
+            <h5 class="card-title">Traje 2</h5>
+            <p class="card-text">Descripción de traje 2.</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="col suits d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/suits/suits3.webp' %}" class="card-img-top img-fluid" alt="Traje 3">
+        <div class="card-body">
+            <h5 class="card-title">Traje 3</h5>
+            <p class="card-text">Descripción de traje 3.</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="col suits d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/suits/suits4.webp' %}" class="card-img-top img-fluid" alt="Traje 4">
+        <div class="card-body">
+            <h5 class="card-title">Traje 4</h5>
+            <p class="card-text">Descripción de traje 4.</p>
+        </div>
+        </div>
+    </div>
+</div>
