@@ -24,10 +24,8 @@
             </button>
             <div class="collapse navbar-collapse link_navbar" id="navbarNav">
                 <ul class="navbar-nav ms-auto ">
-                    {% comment %} <li class="nav-item"><a class="nav-link" href="{% url 'pages/home' %}">Home</a></li> + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) {% endcomment %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'pages/catalogue' %}">Clothing Catalogue</a></li>
+                   <li class="nav-item"><a class="nav-link" href="{% url 'pages:home' %}">Home</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="{% url 'pages:clothing_catalogue' %}">Clothing Catalogue</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">How to order</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Design</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>

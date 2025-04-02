@@ -4,4 +4,4 @@ def home(request):
     return render(request, 'index.html') 
 
 def clothing_catalogue(request):
-    return render(request, 'clothing_catalogue.html')  
+    return render(request, 'clothing_cathalogue.html')  

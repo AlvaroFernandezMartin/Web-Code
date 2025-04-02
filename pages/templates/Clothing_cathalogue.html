@@ -6,7 +6,28 @@
 <link rel="stylesheet" href="{% static 'shared/css/carrousel_button.css' %}">
 
 
-{% include 'shared/filter_cards.html' %}
+<div class="container-fluid  d-flex flex-column">
+  <div class="row flex-grow-1">
+    <!-- Columana IZQ -->
+    <div class="col-md-3  d-flex "> </div>
+    <!-- Columana Cental -->
+    <div class="col-md-6 d-flex flex-column ">
+
+
+
+      <!-- Cartas ropa -->
+      <div class="container mt-4">
+        {% include 'shared/filter_cards.html' %}
+
+      </div>
+      
+
+      
+    </div>
+    <!-- Columana DER -->
+    <div class="col-md-3  d-flex"> </div>
+  </div>
+</div>
 
 
 
