@@ -1,6 +1,36 @@
 <!-- templates/shared/_filter_cards.html -->
 <!-- Botones para seleccionar el grupo de cartas -->
 {% load static %}
+<style>
+    /* Asegurar que haya 4 columnas por fila */
+    #card-container .col {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+    /* Ajustar el tamaño de las cartas sin reducir demasiado */
+    .card {
+        width: 100%; /* Ocupar todo el ancho de su contenedor */
+    }
+
+    /* Asegurar que las imágenes se ajusten sin deformarse */
+    .card-img-top {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    .card-img-top {
+        transition: transform 0.3s ease-in-out; /* Suaviza la transición */
+    }
+    
+    .card:hover .card-img-top {
+        transform: scale(1.1); /* Escala la imagen al 110% */
+    }
+</style>
+
+
+
+
 <div class="mb-4 text-center">
     <button class="filter-btn" onclick="filterCards('workwear', this)">Workwear</button>
     <button class="filter-btn" onclick="filterCards('hospitality_uniforms', this)">Hospitality Uniforms</button>
@@ -13,36 +43,68 @@
     <div class="col workwear d-none">
         <div class="card">
         <img src="{% static 'shared/img/clothes/workwear/Flex trousers.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 1">
-        <div class="card-body">
-            <h5 class="card-title">Flex trousers</h5>
-        </div>
+
         </div>
     </div>
 
     <div class="col workwear d-none">
         <div class="card">
         <img src="{% static 'shared/img/clothes/workwear/Trade air-layer hoodie.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 2">
-        <div class="card-body">
-            <h5 class="card-title">Trade air-layer hoodie</h5>
-        </div>
+
         </div>
     </div>
 
     <div class="col workwear d-none">
         <div class="card">
         <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
-        <div class="card-body">
-            <h5 class="card-title">Trade active polo</h5>
-        </div>
+
         </div>
     </div>
 
     <div class="col workwear d-none">
         <div class="card">
         <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
-        <div class="card-body">
-            <h5 class="card-title">Trade active polo</h5>
+
         </div>
+    </div>
+        <div class="col workwear d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/workwear/Flex trousers.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 1">
+
+        </div>
+    </div>
+
+    <div class="col workwear d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/workwear/Trade air-layer hoodie.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 2">
+
+        </div>
+    </div>
+
+    <div class="col workwear d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
+
+        </div>
+    </div>
+
+    <div class="col workwear d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
+
+        </div>
+    </div>   
+     <div class="col workwear d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
+
+        </div>
+    </div>
+
+    <div class="col workwear d-none">
+        <div class="card">
+        <img src="{% static 'shared/img/clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
+
         </div>
     </div>
 
