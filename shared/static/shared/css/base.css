@@ -1,9 +1,7 @@
-
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,100,900');
-
 /* General structure and layout */
 html, body {
     height: 100%;
+    width: 100%; /* Asegura que el cuerpo ocupe todo el ancho de la pantalla */
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,16 +9,28 @@ html, body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Hacemos que el container-fluid ocupe todo el ancho */
 .container-fluid {
     flex: 1;
+    padding: 0; /* Eliminamos cualquier padding de los contenedores */
+    margin: 0;  /* Eliminamos los márgenes */
 }
 
+/* Esto asegura que la navbar también ocupe todo el ancho sin márgenes */
+.navbar {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Aseguramos que no haya márgenes extra en el body o html */
 footer {
     flex-shrink: 0;
-    
+    padding: 0; /* Eliminamos padding en el footer */
+    margin: 0;  /* Eliminamos márgenes en el footer */
 }
 
-/* General styles and navigation */
+/* Controles de la navbar */
 .bg-primary {
     background-color: rgba(40, 38, 86, 1) !important;
 }
@@ -37,12 +47,12 @@ footer {
     background-color: white; 
 }
 
-/* Footer styles and links */
+/* Estilo de los enlaces en el footer */
 footer a:hover {
     color: #ffde44 !important;
 }
 
-/* Logo styles */
+/* Logo de la navbar */
 .logo {
     margin-left: 10%;
 }
@@ -55,10 +65,23 @@ footer a:hover {
     transform: scale(1.1);
 }
 
+/* Estilo de las listas de la navbar */
 li.nav-item {
     font-size: 20px;
     margin-right: 20px;
 }
-.link_navbar{
-    margin-right:  10%;
+
+.link_navbar {
+    margin-right: 10%;
+}
+
+/* Ajustamos el tamaño del logo del footer */
+footer .logo-footer {
+    width: 150px;
+}
+
+/* Evitamos que la página tenga márgenes innecesarios */
+html, body, .container-fluid {
+    padding: 0;
+    margin: 0;
 }

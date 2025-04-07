@@ -5,3 +5,9 @@ def home(request):
 
 def clothing_catalogue(request):
     return render(request, 'clothing_cathalogue.html')  
+
+def case_study(request):
+    return render(request, 'case_study.html')  
+
+def faq(request):
+    return render(request, 'faq.html')  

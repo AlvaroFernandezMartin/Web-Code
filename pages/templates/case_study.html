@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'shared/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'shared/css/carrousel_button.css' %}">
+
+<style>
+  .case-row {
+    margin-bottom: 4rem;
+    align-items: center;
+  }
+
+  .case-img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+  }
+
+  .case-text {
+    padding-left: 1.5rem;
+  }
+
+  .divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 3rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .case-row {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .case-img {
+      max-width: 120%;
+      width: 120%;
+      margin-bottom: 1rem;
+    }
+
+    .case-text {
+      padding-left: 0;
+    }
+  }
+</style>
+
+<div class="container mt-5">
+
+  <!-- Radisson Blu -->
+  <div class="row case-row">
+    <div class="col-md-4 text-center">
+      <img src="{% static 'shared/img/clients/Radisson_Hotel.avif' %}" alt="Radisson Blu Hotel" class="case-img">
+    </div>
+    <div class="col-md-8 case-text">
+      <h4>Radisson Blu: Where Style Meets Service</h4>
+      <p>Radisson Blu is an internationally renowned hotel brand with over 200 establishments in more than 60 countries. To meet their high standards, Bensons developed tailored uniforms that reflect elegance, professionalism, and comfort. Each design aligns with Radisson Blu’s sophisticated brand image and was crafted using high-quality, durable materials that withstand intensive use. Specific uniforms were created for various departments to ensure consistency while supporting functionality. Employees benefit from ergonomic cuts, stain-resistant and breathable fabrics, and stylish modern designs that enhance their performance and elevate the guest experience.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BMW -->
+  <div class="row case-row">
+    <div class="col-md-4 text-center">
+      <img src="{% static 'shared/img/clients/BMW_logo.avif' %}" alt="BMW" class="case-img">
+    </div>
+    <div class="col-md-8 case-text">
+      <h4>BMW: Luxury, Performance and Excellence</h4>
+      <p>BMW, known globally for its automotive excellence, required uniforms that embody its values of innovation, precision, and prestige. Bensons delivered premium uniforms tailored to different departments—ranging from customer service to security. These garments are made from ergonomic, breathable, and moisture-wicking fabrics that maintain a polished look even during long shifts. Design features like adjustable cuffs, functional pockets, and advanced textile technologies ensure maximum mobility and employee comfort. The result is a cohesive, professional image that enhances both customer experience and team efficiency within BMW's dealerships.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Jameson Distillery -->
+  <div class="row case-row">
+    <div class="col-md-4 text-center">
+      <img src="{% static 'shared/img/clients/Jameson_logo.avif' %}" alt="Jameson Distillery" class="case-img">
+    </div>
+    <div class="col-md-8 case-text">
+      <h4>Jameson Distillery: Innovation Meets Tradition</h4>
+      <p>Jameson Distillery, a symbol of Irish heritage and craftsmanship, partnered with Bensons to create uniforms fit for the rigors of distillation. The uniforms feature flame- and chemical-resistant fabrics, reinforced seams, and modular elements like removable sleeves to accommodate varying work conditions. Bensons also incorporated anti-odor and antibacterial technologies for long-lasting freshness and hygiene. The ergonomic fit, strategic ventilation zones, and tool-ready design support efficiency and safety. With sustainable materials and eco-friendly practices, these uniforms reinforce Jameson’s commitment to environmental responsibility while maintaining a refined and professional aesthetic.</p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

@@ -2,7 +2,7 @@
 <!-- Botones para seleccionar el grupo de cartas -->
 {% load static %}
 <style>
-    /* Asegurar que haya 4 columnas por fila */
+    /* Asegurar que haya 5 columnas por fila */
     #card-container .col {
         flex: 0 0 20%;
         max-width: 20%;
@@ -26,6 +26,14 @@
     .card:hover .card-img-top {
         transform: scale(1.1); /* Escala la imagen al 110% */
     }
+    @media (max-width: 768px) {
+        /* Asegurar que haya 4 columnas por fila */
+        #card-container .col {
+            flex: 0 0 33%;
+            max-width: 33%;
+        }
+        }
+      
 </style>
 
 
@@ -115,8 +123,7 @@
         <div class="card">
         <img src="{% static 'shared/img/clothes/Hospitality service/apron.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 1">
         <div class="card-body">
-            <h5 class="card-title">Ropa Casual 1</h5>
-            <p class="card-text">Descripción de ropa casual 1.</p>
+            
         </div>
         </div>
     </div>
@@ -125,8 +132,6 @@
         <div class="card">
         <img src="{% static 'shared/img/clothes/Hospitality service/Chef_short_sleeve_jacket.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 2">
         <div class="card-body">
-            <h5 class="card-title">Ropa Casual 2</h5>
-            <p class="card-text">Descripción de ropa casual 2.</p>
         </div>
         </div>
     </div>
@@ -135,8 +140,6 @@
         <div class="card">
         <img src="{% static 'shared/img/clothes/Hospitality service/chef_jacket.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 3">
         <div class="card-body">
-            <h5 class="card-title">Ropa Casual 3</h5>
-            <p class="card-text">Descripción de ropa casual 3.</p>
         </div>
         </div>
     </div>
@@ -145,8 +148,6 @@
         <div class="card">
         <img src="{% static 'shared/img/clothes/Hospitality service/craft apron.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 4">
         <div class="card-body">
-            <h5 class="card-title">Ropa Casual 4</h5>
-            <p class="card-text">Descripción de ropa casual 4.</p>
         </div>
         </div>
     </div>
@@ -156,8 +157,6 @@
         <div class="card">
         <img src="{% static 'shared/img/clothes/suits/suits1.webp' %}" class="card-img-top img-fluid" alt="Traje 1">
         <div class="card-body">
-            <h5 class="card-title">Traje 1</h5>
-            <p class="card-text">Descripción de traje 1.</p>
         </div>
         </div>
     </div>
@@ -166,8 +165,6 @@
         <div class="card">
         <img src="{% static 'shared/img/clothes/suits/suits2.webp' %}" class="card-img-top img-fluid" alt="Traje 2">
         <div class="card-body">
-            <h5 class="card-title">Traje 2</h5>
-            <p class="card-text">Descripción de traje 2.</p>
         </div>
         </div>
     </div>
@@ -175,20 +172,12 @@
     <div class="col suits d-none">
         <div class="card">
         <img src="{% static 'shared/img/clothes/suits/suits3.webp' %}" class="card-img-top img-fluid" alt="Traje 3">
-        <div class="card-body">
-            <h5 class="card-title">Traje 3</h5>
-            <p class="card-text">Descripción de traje 3.</p>
-        </div>
         </div>
     </div>
 
     <div class="col suits d-none">
         <div class="card">
         <img src="{% static 'shared/img/clothes/suits/suits4.webp' %}" class="card-img-top img-fluid" alt="Traje 4">
-        <div class="card-body">
-            <h5 class="card-title">Traje 4</h5>
-            <p class="card-text">Descripción de traje 4.</p>
-        </div>
         </div>
     </div>
 </div>

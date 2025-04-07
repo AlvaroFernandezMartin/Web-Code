@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
     <title>{% block title %}Bensonsworkwear{% endblock %}</title>
     {% load static %}
 
@@ -14,62 +13,61 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg  bg-primary">
+    <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
-            <a class=" logo" href="#">
-                <img src="{% static 'shared/img/logo_Bensons_White.avif' %}" class="logo-footer" alt="Bensons Workwear Logo" height="90"> 
+            <a class="logo" href="#">
+                <img src="{% static 'shared/img/logo_Bensons_White.avif' %}" class="logo-footer" alt="Bensons Workwear Logo" height="90">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse link_navbar" id="navbarNav">
-                <ul class="navbar-nav ms-auto ">
-                   <li class="nav-item"><a class="nav-link" href="{% url 'pages:home' %}">Home</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="{% url 'pages:clothing_catalogue' %}">Clothing Catalogue</a></li>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'pages:home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'pages:clothing_catalogue' %}">Catalogue</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'pages:case_study' %}">Case study</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Shop by Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Brochures</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">How to order</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Design</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'pages:faq' %}">FAQ</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <!-- Main Content -->
-    <div>
-        
+    <div class="container-fluid">
         {% block content %}
-  
         {% endblock %}
     </div>
 
     <!-- Footer -->
-    <footer class="text-white  bg-primary ">
+    <footer class="text-white bg-primary">
         <div class="container">
             <div class="row justify-content-center align-items-center">
-                
-                <!-- contact infomation  -->
+                <!-- Contact Information -->
                 <div class="col-12 col-md-4 mb-3 text-md-start text-center">
                     <p class="mb-1">&copy; 2025 Bensons Workwear. All Rights Reserved.</p>
                     <p class="mb-1">
                         <i class="bi bi-envelope-at-fill"></i>
                         <a href="mailto:sales@bensonsworkwear.com" class="text-white">sales@bensonsworkwear.com</a>
                     </p>
-                    <p class="mb-1"> 
-                        <i class="bi bi-phone"></i> 
+                    <p class="mb-1">
+                        <i class="bi bi-phone"></i>
                         <a href="tel:+441234567890" class="text-white">+44 1234 567 890</a>
                     </p>
                     <p class="mb-3">
-                        <i class="bi bi-geo-alt-fill"></i> 
-                        <a href="https://www.google.com/maps/search/?api=1&query=7+Europa+Enterprise+Park,+Midleton,+Co.+Cork,+P25+YD88" 
-                        target="_blank" 
-                        class="text-white d-inline-block">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <a href="https://www.google.com/maps/search/?api=1&query=7+Europa+Enterprise+Park,+Midleton,+Co.+Cork,+P25+YD88"
+                        target="_blank" class="text-white d-inline-block">
                             7, Europa Enterprise Park, Midleton, Co. Cork, P25 YD88
                         </a>
                     </p>
                 </div>
 
-                <!-- Social media  -->
+                <!-- Social Media -->
                 <div class="col-12 col-md-2 mb-3 d-flex flex-column align-items-center">
                     <a href="https://www.facebook.com/BensonsWorkwear" target="_blank" class="text-white fs-3 mb-2">
                         <i class="bi bi-facebook"></i>
@@ -89,7 +87,6 @@
                 <div class="col-12 col-md-4 mb-3 text-center">
                     <img src="{% static 'shared/img/logo_Bensonsworkwear.png' %}" alt="Bensons Workwear Logo" height="150">
                 </div>
-
             </div>
         </div>
     </footer>
