@@ -9,5 +9,8 @@ def clothing_catalogue(request):
 def case_study(request):
     return render(request, 'case_study.html')  
 
+def about_us(request):
+    return render(request, 'about_us.html')  
+
 def faq(request):
     return render(request, 'faq.html')  

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'shared/css/about_us.css' %}">
+<!-- Sección de "About Us" con una estructura de columnas -->
+<div class="about-us-section">
+    <!-- Imagen de fondo -->
+    <div class="about-us-image" style="background-image: url('{% static "shared/img/beni_black_and_whaite.avif" %}');"></div>
+    
+    <!-- Contenedor de texto -->
+    <div class="about-us-content">
+        <h2>About Bensons</h2>
+        <div class="about-us-columns">
+            <div class="about-us-left">
+                <p>We have supplied hundreds of companies ranging from hospitality corporate industrial and healthcare providing uniforms that allow businesses and companies from all market segments to highlight their staff, their service, and ultimately their brand. Our vision is clear. Corporatewear and Workwear should not be boring. On the contrary, we make corporate wear and workwear that is fashionable, fun, and elegant without sacrificing its functionality.</p>
+                <p>Year after year, the business grew, and we moved from a humble small office in Limerick to the idyllic town of Midleton, in Co. Cork, into larger facilities with manufacturing capabilities. During the pandemic, Benson's stepped up to help the community of Ireland, stopping production of regular stock in order to focus on producing medical gowns. The company adapted quickly to help the national healthcare system.</p>
+            </div>
+            <div class="about-us-right">
+                <p>The passion for design and dress making of Benson's CEO and Fashion Designer Beni Moussa began when he was a child, helping his mother and sisters to tweak dresses and make patterns for silk printing. A growing interest in the Fashion Industry led him to London, where he sourced textiles and fashion for different corporate wear companies. As part of his long term vision he moved to Ireland to open a manufacturing company specializing in uniforms where he could inspire creativity and infuse fashion into the industry.</p>
+                <p>Benson's is now a secure HSE provider, providing high-quality gowns and masks for the Irish healthcare system. Our goal is to be an integrated multi-service company offering solutions for our clients. We focus on sustainability and source our materials from ethical sources. Listening to our clients' needs is our foremost expertise.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sección de "Meet The Team" -->
+<div class="container-fluid d-flex flex-column">
+    <div class="row flex-grow-1">
+        <!-- Columna IZQ -->
+        <div class="col-md-3 d-flex"> </div>
+        <!-- Columna Central con fotos de los miembros del equipo -->
+        <div class="col-md-6 d-flex flex-column">
+            <div class="meet-the-team-section">
+                <h2 class="text-center">Meet The Team</h2>
+                <div class="row">
+                    <div class="col-md-4 team-member">
+                        <img src="{% static 'shared/img/bensons/Beni Moussa _CEO_Bensons.avif' %}" alt="Beni Moussa" class="team-member-img">
+                        <h3>Beni Moussa</h3>
+                        <p>CEO</p>
+                    </div>
+                    <div class="col-md-4 team-member">
+                        <img src="{% static 'shared/img/bensons/Jess Fouhy.avif' %}" alt="Jess Fouhy" class="team-member-img">
+                        <h3>Jess Fouhy</h3>
+                        <p>Business Development Manager</p>
+                    </div>
+                    <div class="col-md-4 team-member">
+                        <img src="{% static 'shared/img/bensons/Hamid.avif' %}" alt="Hamid" class="team-member-img">
+                        <h3>Hamid</h3>
+                        <p>Head Embroidery & Screenprinting</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4 team-member">
+                        <img src="{% static 'shared/img/bensons/Joanne Van Wyk.avif' %}" alt="Joanne Van Wyk" class="team-member-img">
+                        <h3>Joanne Van Wyk</h3>
+                        <p>Bookkeeper</p>
+                    </div>
+                    <div class="col-md-4 team-member">
+                        <img src="{% static 'shared/img/bensons/Rita Hanna.avif' %}" alt="Rita Hanna" class="team-member-img">
+                        <h3>Rita Hanna</h3>
+                        <p>Seamstress</p>
+                    </div>
+                    <div class="col-md-4 team-member">
+                        <img src="{% static 'shared/img/bensons/Wiktoria Miller.avif' %}" alt="Wiktoria Miller" class="team-member-img">
+                        <h3>Wiktoria Miller</h3>
+                        <p>Sales Executive</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Columna DERECHA -->
+        <div class="col-md-3 d-flex"> </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -57,13 +57,13 @@ footer a:hover {
     margin-left: 10%;
 }
 
-.logo-footer {
+/* .logo-footer {
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-}
+} */
 
-.logo-footer:hover {
+/* .logo-footer:hover {
     transform: scale(1.1);
-}
+} */
 
 /* Estilo de las listas de la navbar */
 li.nav-item {
