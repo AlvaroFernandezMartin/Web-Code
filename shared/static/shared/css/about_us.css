@@ -1,27 +1,31 @@
-/* Estilo para la sección de "About Us" */
+/* =========================
+   Sección: About Us
+========================= */
+
+/* Contenedor principal */
 .about-us-section {
   position: relative;
   width: 100%;
-  padding-top: 60px; /* Espacio adicional para asegurar que el contenido no se sobreponga */
+  padding-top: 60px; /* Espacio adicional para no sobreponerse */
 }
 
 /* Imagen de fondo */
 .about-us-image {
   width: 100%;
   height: 300px;
-  background-size: contain;  /* Cambiado para evitar que la imagen se corte */
+  background-size: contain;
   background-position: center;
-  background-repeat: no-repeat;  /* Evita que la imagen se repita */
+  background-repeat: no-repeat;
   filter: brightness(70%);
 }
 
-/* Contenedor de texto dentro de la sección */
+/* Contenedor del texto */
 .about-us-content {
-  background-color: #f9f9f9; /* Fondo claro para el texto */
   padding: 50px 10%;
   text-align: center;
 }
 
+/* Título principal */
 .about-us-content h2 {
   font-size: 3rem;
   font-weight: bold;
@@ -29,17 +33,17 @@
   margin-bottom: 40px;
 }
 
-/* Estructura de columnas para el texto */
+/* Contenedor de columnas */
 .about-us-columns {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px;
 }
 
+/* Columnas izquierda y derecha */
 .about-us-left,
 .about-us-right {
-  width: 45%;
+  flex: 1 1 45%;
   font-size: 1.1rem;
   line-height: 1.8;
   color: #666;
@@ -50,15 +54,15 @@
   margin-bottom: 20px;
 }
 
-/* Agregar animación de entrada suave */
+/* Animación suave de entrada */
 @keyframes fadeIn {
   0% {
-      opacity: 0;
-      transform: translateY(30px);
+    opacity: 0;
+    transform: translateY(30px);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -67,10 +71,12 @@
   animation: fadeIn 1s ease-out;
 }
 
-/* Estilos para la sección de "Meet the Team" */
+/* =========================
+   Sección: Meet the Team
+========================= */
+
 .meet-the-team-section {
   padding: 60px 10%;
-  background-color: #f9f9f9;
 }
 
 .meet-the-team-section h2 {
@@ -103,26 +109,36 @@
   color: #666;
 }
 
-/* Ajustes responsivos */
+/* =========================
+   Responsive (Pantallas pequeñas)
+========================= */
+
 @media (max-width: 768px) {
+  /* Apilar columnas en About Us */
+  .about-us-left,
+  .about-us-right {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  /* Ajuste en padding de Meet the Team */
   .meet-the-team-section {
-      padding: 40px 5%;
+    padding: 40px 5%;
   }
 
   .team-member {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   .team-member-img {
-      width: 100%;
-      height: 180px;
+    height: 180px;
   }
 
   .team-member h3 {
-      font-size: 1.3rem;
+    font-size: 1.3rem;
   }
 
   .team-member p {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }

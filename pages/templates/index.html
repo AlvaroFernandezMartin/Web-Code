@@ -214,24 +214,40 @@
 
 
 <script>
-  function filterCards(group, button) {
-    // Ocultar todas las tarjetas
-    document.querySelectorAll('#card-container .col').forEach(card => {
-      card.classList.toggle('d-none', !card.classList.contains(group));
+  window.onload = function () {
+    // Dispara la función con el botón por defecto
+    const defaultBtn = document.querySelector('.dropdown-item.active');
+    if (defaultBtn) {
+      filterCards('workwear', defaultBtn);
+    }
+  };
+
+  function filterCards(category, clickedButton) {
+    // Ocultar todas las cartas
+    document.querySelectorAll('#card-container .col').forEach(col => {
+      col.classList.add('d-none');
     });
 
-    // Remover la clase "active-btn" de todos los botones
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active-btn'));
+    // Mostrar solo las cartas de la categoría seleccionada
+    document.querySelectorAll(`#card-container .${category}`).forEach(col => {
+      col.classList.remove('d-none');
+    });
 
-    // Agregar la clase "active-btn" al botón seleccionado
-    button.classList.add('active-btn');
+    // Quitar clase activa de todos los botones del dropdown
+    document.querySelectorAll('.dropdown-item').forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    // Agregar clase activa al botón clicado
+    clickedButton.classList.add('active');
+
+    // Cerrar el dropdown (si se desea)
+    const dropdown = bootstrap.Dropdown.getInstance(clickedButton.closest('.dropdown-toggle'));
+    if (dropdown) {
+      dropdown.hide();
+    }
   }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    // Selecciona el primer grupo por defecto
-    const defaultButton = document.querySelector('.filter-btn');
-    filterCards('workwear', defaultButton);
-  });
 </script>
+
 {% endblock %}
 

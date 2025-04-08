@@ -7,7 +7,9 @@ html, body {
     display: flex;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
+    background-color:  #f9f9f9; 
 }
+
 
 /* Hacemos que el container-fluid ocupe todo el ancho */
 .container-fluid {

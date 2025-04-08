@@ -1,0 +1,37 @@
+.case-row {
+    margin-bottom: 4rem;
+    align-items: center;
+  }
+
+  .case-img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+  }
+
+  .case-text {
+    padding-left: 1.5rem;
+  }
+
+  .divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 3rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .case-row {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .case-img {
+      max-width: 120%;
+      width: 120%;
+      margin-bottom: 1rem;
+    }
+
+    .case-text {
+      padding-left: 0;
+    }
+  }

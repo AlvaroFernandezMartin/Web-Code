@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'shared/css/contact_us.css' %}">
+
+<!-- Contact Form Section -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">Contact Us</h2>
+
+    <div class="row">
+        <!-- Formulario de contacto -->
+        <div class="col-12 col-md-6">
+            <form action="{% url 'pages:contact_us' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <!-- Your Name (required) -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name (required)</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                
+                <!-- Company Name -->
+                <div class="mb-3">
+                    <label for="company_name" class="form-label">Company Name</label>
+                    <input type="text" class="form-control" id="company_name" name="company_name">
+                </div>
+                
+                <!-- Your Email (required) -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email (required)</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                
+                <!-- Telephone (required) -->
+                <div class="mb-3">
+                    <label for="telephone" class="form-label">Telephone (required)</label>
+                    <input type="tel" class="form-control" id="telephone" name="telephone" required>
+                </div>
+                
+                <!-- Upload a file -->
+                <div class="mb-3">
+                    <label for="file" class="form-label">Upload a file (pdf|png|jpg|jpeg|txt|eps|ai) Max size: 5 MB</label>
+                    <input type="file" class="form-control" id="file" name="file" accept=".pdf,.png,.jpg,.jpeg,.txt,.eps,.ai" required>
+                </div>
+                
+                <!-- How Can We Help -->
+                <div class="mb-3">
+                    <label for="message" class="form-label">How Can We Help</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Google Maps -->
+        <div class="col-12 col-md-6">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.1305071585343!2d-8.189180299999999!3d51.913329999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b59553b3e8d1f%3A0x180dff01b59af483!2sBensons%20Workwear!5e0!3m2!1ses!2sie!4v1744109807345!5m2!1ses!2sie" 
+                    class="embed-responsive-item" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -69,9 +69,13 @@
   margin: auto;
 }
 
-
+.button_container {
+margin-bottom: 20px;
+}
 .filter-btn {
-  padding: 10px 20px;
+  width: 150px ;
+  height: 40px ;
+  
   border: none;
   background-color: #ddd;
   cursor: pointer;
@@ -82,11 +86,14 @@
   background-color: #bbb;
 }
 
-.active-btn {
+.dropdown-item.active {
   background-color: gold !important;
   color: black;
   font-weight: bold;
 }
+
+
+
 /* Ajustar el tamaño de la fuente en pantallas más pequeñas */
 @media (max-width: 768px) {
   .carrousel-text h2 {

@@ -38,12 +38,58 @@
 
 
 
+  
 
-<div class="mb-4 text-center">
+
+ {% comment %} <div class="d-flex overflow-auto gap-2 py-2 px-3 flex-nowrap button_container" style="white-space: nowrap;">
     <button class="filter-btn" onclick="filterCards('workwear', this)">Workwear</button>
-    <button class="filter-btn" onclick="filterCards('hospitality_uniforms', this)">Hospitality Uniforms</button>
+    <button class="filter-btn" onclick="filterCards('hospitality_uniforms', this)">Hospitality</button>
     <button class="filter-btn" onclick="filterCards('suits', this)">Suits</button>
-    </div>
+    <button class="filter-btn" onclick="filterCards('workwear', this)">Workwear</button>
+    <button class="filter-btn" onclick="filterCards('hospitality_uniforms', this)">Hospitality</button>
+    <button class="filter-btn" onclick="filterCards('suits', this)">Suits</button>        <button class="filter-btn" onclick="filterCards('workwear', this)">Workwear</button>
+    <button class="filter-btn" onclick="filterCards('hospitality_uniforms', this)">Hospitality</button>
+    <button class="filter-btn" onclick="filterCards('suits', this)">Suits</button>
+    <button class="filter-btn" onclick="filterCards('workwear', this)">Workwear</button>
+    <button class="filter-btn" onclick="filterCards('hospitality_uniforms', this)">Hospitality</button>
+    <button class="filter-btn" onclick="filterCards('suits', this)">Suits</button>
+    <button class="filter-btn" onclick="filterCards('workwear', this)">Workwear</button>
+    <button class="filter-btn" onclick="filterCards('hospitality_uniforms', this)">Hospitality</button>
+    <button class="filter-btn" onclick="filterCards('suits', this)">Suits</button>        <button class="filter-btn" onclick="filterCards('workwear', this)">Workwear</button>
+    <button class="filter-btn" onclick="filterCards('hospitality_uniforms', this)">Hospitality</button>
+    <button class="filter-btn" onclick="filterCards('suits', this)">Suits</button>
+  </div>  {% endcomment %}
+
+
+ <!-- Filtro desplegable -->
+<div class="dropdown px-3 py-2">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownFilter" data-bs-toggle="dropdown" aria-expanded="false">
+      Filter by Category
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownFilter">
+        <li><a class="dropdown-item active"  onclick="filterCards('workwear', this)">Workwear</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('hospitality_uniforms', this)">Hospitality</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('suits', this)">Suits</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('workwear', this)">Workwear</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('hospitality_uniforms', this)">Hospitality</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('suits', this)">Suits</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('workwear', this)">Workwear</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('hospitality_uniforms', this)">Hospitality</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('suits', this)">Suits</a></li>      
+        <li><a class="dropdown-item"  onclick="filterCards('workwear', this)">Workwear</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('hospitality_uniforms', this)">Hospitality</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('suits', this)">Suits</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('workwear', this)">Workwear</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('hospitality_uniforms', this)">Hospitality</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('suits', this)">Suits</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('workwear', this)">Workwear</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('hospitality_uniforms', this)">Hospitality</a></li>
+        <li><a class="dropdown-item"  onclick="filterCards('suits', this)">Suits</a></li>
+    </ul>
+  </div>
+  
+  
+  
 
     <!-- Contenedor de cartas -->
     <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 g-4" id="card-container">
