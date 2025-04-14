@@ -30,7 +30,7 @@ db.sqlite3
 *.log
 
 # Django static and cache files
-staticfiles/
+# staticfiles/
 *.tmp
 
 # Environment variables (secrets)
