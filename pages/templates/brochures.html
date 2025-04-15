@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'shared/css/brochures.css' %}">
+
+<div class="container py-5">
+    <img  src="{% static 'shared\img\broucheres_colage.avif' %}" alt="">
+    <img  src="{% static 'shared\img\broucheres_catalogues.avif' %}" alt="">
+
+    <h2 class="text-center mb-4">Download Our Brochures</h2>
+
+    <div class="intro-paragraph text-center mb-5">
+        <p>
+            <strong>Bensons Corporatewear</strong>, designs, manufactures, and supplies bespoke corporate uniforms, as well as providing a wide range of corporate wear and workwear clothing from the leading European providers.
+        </p>
+        <p>
+            From everyday corporate suits to hardware workwear, Bensons has a wide range of staff uniforms for men and women. The staff uniforms we provide are also branded to ensure that your brand is clearly visible. The uniforms we offer are specifically tailored to each industry, whether it is corporate, hospitality, commercial, tourism, healthcare, transport, construction, etc. Providing durability and safety is a priority for us. With over 10 years of experience supplying uniforms to our clients, we know what our clients need.
+        </p>
+        <p>
+            Click below to download catalogues of all our wide range of products.
+            Browse any of the catalogs below, select and get expert advice on your next uniform. Through the selection, advice, and completion of your order, our team will ensure a seamless customer experience.
+        </p>
+    </div>
+
+    <div class="row gy-4 brochure-cards">
+        <div class="col-md-4 text-center">
+            <img src="{% static 'shared/img/icons/corporate_icon.png' %}" alt="Corporate Icon" class="img-fluid mb-3 brochure-icon">
+            <h4>Corporate Wear</h4>
+            <p>Explore our catalogue of modern corporate suits and business uniforms.</p>
+            <a href="{% static 'shared/brochures/corporatewear.pdf' %}" class="btn btn-primary" target="_blank">Download PDF</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <img src="{% static 'shared/img/icons/hospitality_icon.png' %}" alt="Hospitality Icon" class="img-fluid mb-3 brochure-icon">
+            <h4>Hospitality</h4>
+            <p>Discover uniforms tailored for hotels, restaurants and service teams.</p>
+            <a href="{% static 'shared/brochures/hospitalitywear.pdf' %}" class="btn btn-primary" target="_blank">Download PDF</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <img src="{% static 'shared/img/icons/healthcare_icon.png' %}" alt="Healthcare Icon" class="img-fluid mb-3 brochure-icon">
+            <h4>Healthcare</h4>
+            <p>Professional and comfortable uniforms for clinics and hospitals.</p>
+            <a href="{% static 'shared/brochures/healthcare.pdf' %}" class="btn btn-primary" target="_blank">Download PDF</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

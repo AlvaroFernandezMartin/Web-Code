@@ -26,8 +26,8 @@
     }
 
     .case-img {
-      max-width: 120%;
-      width: 120%;
+      width: 100%;
+      max-width: 200px;
       margin-bottom: 1rem;
     }
 

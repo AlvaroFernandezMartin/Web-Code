@@ -49,10 +49,6 @@ Message: {message}
     return render(request, 'contact_us.html', {'form': form})
 
 
-
-
-
-
 def test_email(request):
     url = "https://api.brevo.com/v3/smtp/email"
 
@@ -96,6 +92,11 @@ def about_us(request):
 def faq(request):
     return render(request, 'faq.html')  
 
+def brochures(request):
+    return render(request, 'brochures.html')  
+
 
 # def contact_us(request):
 #     return render(request, 'contact_us.html')
+
+

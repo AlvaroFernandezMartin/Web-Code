@@ -1,0 +1,25 @@
+.intro-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.brochure-icon {
+    max-height: 100px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.brochure-icon:hover {
+    transform: scale(1.1);
+}
+
+.brochure-cards h4 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.brochure-cards p {
+    color: #555;
+}
