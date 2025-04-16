@@ -1,13 +1,50 @@
+/* Imagen de cabecera */
+.broucheres_colage_img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Imagen clickeable a la derecha */
+.broucheres_catalogues {
+    max-width: 500px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 5px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+
+
+/* Contenedor imagen + texto */
+.intro-image-block {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+/* Texto a la izquierda */
 .intro-paragraph {
+    flex: 1 1 300px;
+    max-width: 700px;
     font-size: 1.1rem;
     line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
     color: #333;
 }
 
+/* Fondo gris claro para tarjetas */
+.brochure-cards-wrapper {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Iconos en tarjetas */
 .brochure-icon {
-    max-height: 100px;
+    max-height: 200px;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -15,6 +52,7 @@
     transform: scale(1.1);
 }
 
+/* Títulos y texto de tarjetas */
 .brochure-cards h4 {
     margin-top: 10px;
     font-weight: bold;
@@ -22,4 +60,31 @@
 
 .brochure-cards p {
     color: #555;
+}
+.brochure-intro {
+    font-size: 1.1rem;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+
+#brochure_icons_title{
+    color: #2a3359;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .intro-image-block {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .broucheres_catalogues {
+        margin-top: 1.5rem;
+        max-width: 350px;
+    }
+
+    .intro-paragraph {
+        text-align: center;
+    }
 }

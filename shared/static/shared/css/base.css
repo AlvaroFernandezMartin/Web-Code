@@ -1,44 +1,47 @@
-/* General structure and layout */
+/* -------------------------
+   Fuente personalizada
+------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* -------------------------
+   Reset y estructura base
+------------------------- */
 html, body {
     height: 100%;
-    width: 100%; /* Asegura que el cuerpo ocupe todo el ancho de la pantalla */
+    width: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    font-family: 'Roboto', sans-serif;
-    background-color:  #f9f9f9; 
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
 }
 
-
-/* Hacemos que el container-fluid ocupe todo el ancho */
+/* -------------------------
+   Contenedor principal
+------------------------- */
 .container-fluid {
     flex: 1;
-    padding: 0; /* Eliminamos cualquier padding de los contenedores */
-    margin: 0;  /* Eliminamos los márgenes */
+    padding: 0;
+    margin: 0;
 }
 
-/* Esto asegura que la navbar también ocupe todo el ancho sin márgenes */
+/* -------------------------
+   Navbar
+------------------------- */
 .navbar {
     margin: 0;
-    padding: 0;
+    padding: 0.75rem 1rem; /* Aumenta la altura de la navbar */
     width: 100%;
 }
 
-/* Aseguramos que no haya márgenes extra en el body o html */
-footer {
-    flex-shrink: 0;
-    padding: 0; /* Eliminamos padding en el footer */
-    margin: 0;  /* Eliminamos márgenes en el footer */
-}
-
-/* Controles de la navbar */
 .bg-primary {
     background-color: rgba(40, 38, 86, 1) !important;
 }
 
 .nav-link {
     color: white !important;
+    font-size: 18px;
 }
 
 .nav-link:hover {
@@ -46,28 +49,9 @@ footer {
 }
 
 .navbar-toggler {
-    background-color: white; 
+    background-color: white;
 }
 
-/* Estilo de los enlaces en el footer */
-footer a:hover {
-    color: #ffde44 !important;
-}
-
-/* Logo de la navbar */
-.logo {
-    margin-left: 10%;
-}
-
-/* .logo-footer {
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-} */
-
-/* .logo-footer:hover {
-    transform: scale(1.1);
-} */
-
-/* Estilo de las listas de la navbar */
 li.nav-item {
     font-size: 20px;
     margin-right: 20px;
@@ -77,18 +61,31 @@ li.nav-item {
     margin-right: 10%;
 }
 
-/* Ajustamos el tamaño del logo del footer */
-footer .logo-footer {
-    width: 150px;
+.logo {
+    margin-left: 10%;
 }
 
-/* Evitamos que la página tenga márgenes innecesarios */
-html, body, .container-fluid {
+/* -------------------------
+   Footer
+------------------------- */
+footer {
+    flex-shrink: 0;
     padding: 0;
     margin: 0;
 }
 
-@media (max-width: 991.98px) {
+footer .logo-footer {
+    width: 150px;
+}
+
+footer a:hover {
+    color: #ffde44 !important;
+}
+
+/* -------------------------
+   Responsive: Navbar en móviles
+------------------------- */
+@media (max-width: 768px) {
     .navbar-collapse {
         padding-left: 1rem;
         padding-right: 1rem;
