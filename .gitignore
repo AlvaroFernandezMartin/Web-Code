@@ -32,7 +32,7 @@ db.sqlite3
 # Django static and cache files
 staticfiles/
 *.tmp
-
+media/
 # Environment variables (secrets)
 .env
 *.env

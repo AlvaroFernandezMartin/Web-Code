@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'shared.apps.SharedConfig',
     'products.apps.ProductsConfig',
     'pages.apps.PagesConfig',
+    'smart_selects',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,7 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+USE_DJANGO_JQUERY = True  
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
