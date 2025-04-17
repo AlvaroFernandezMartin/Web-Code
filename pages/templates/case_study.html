@@ -1,16 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'shared/base.html' %}
 
 {% block content %}
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'shared/css/case_study.css' %}">
+<link rel="stylesheet" href="{% static 'css/case_study.css' %}">
 
 <div class="container mt-5">
 
   <!-- Radisson Blu -->
   <div class="row case-row">
     <div class="col-md-4 text-center">
-      <img src="{% static 'shared/img/clients/Radisson_Hotel.avif' %}" alt="Radisson Blu Hotel" class="case-img">
+      <img src="{% static 'clients/Radisson_Hotel.avif' %}" alt="Radisson Blu Hotel" class="case-img">
     </div>
     <div class="col-md-8 case-text">
       <h4>Radisson Blu: Where Style Meets Service</h4>
@@ -23,7 +23,7 @@
   <!-- BMW -->
   <div class="row case-row">
     <div class="col-md-4 text-center">
-      <img src="{% static 'shared/img/clients/BMW_logo.avif' %}" alt="BMW" class="case-img">
+      <img src="{% static 'clients/BMW_logo.avif' %}" alt="BMW" class="case-img">
     </div>
     <div class="col-md-8 case-text">
       <h4>BMW: Luxury, Performance and Excellence</h4>
@@ -36,7 +36,7 @@
   <!-- Jameson Distillery -->
   <div class="row case-row">
     <div class="col-md-4 text-center">
-      <img src="{% static 'shared/img/clients/Jameson_logo.avif' %}" alt="Jameson Distillery" class="case-img">
+      <img src="{% static 'clients/Jameson_logo.avif' %}" alt="Jameson Distillery" class="case-img">
     </div>
     <div class="col-md-8 case-text">
       <h4>Jameson Distillery: Innovation Meets Tradition</h4>

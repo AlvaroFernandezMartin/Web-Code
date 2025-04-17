@@ -6,47 +6,67 @@ from django.http import HttpResponse
 
 import requests
 
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+import os
+
+@csrf_exempt
 def contact_us(request):
     if request.method == 'POST':
-        form = ContactForm(request.POST, request.FILES)
-        if form.is_valid():
-            name = form.cleaned_data['name']
-            company_name = form.cleaned_data['company_name']
-            email = form.cleaned_data['email']
-            telephone = form.cleaned_data['telephone']
-            message = form.cleaned_data['message']
-            uploaded_file = form.cleaned_data['file']
+        name = request.POST.get('name')
+        company = request.POST.get('company_name')
+        email = request.POST.get('email')
+        phone = request.POST.get('telephone')
+        message = request.POST.get('message')
+        uploaded_file = request.FILES.get('file')
 
-            subject = f"[Contact Form] {name} from {company_name or 'N/A'}"
-            message_body = f"""
-Name: {name}
-Company: {company_name}
-Email: {email}
-Telephone: {telephone}
-Message: {message}
-            """
+        # Guardar el archivo temporalmente (si existe)
+        file_url = ""
+        if uploaded_file:
+            if uploaded_file.size > 5 * 1024 * 1024:
+                messages.error(request, "File size exceeds 5MB.")
+                return redirect('pages:contact_us')
+            file_path = default_storage.save(f"temp/{uploaded_file.name}", ContentFile(uploaded_file.read()))
+            file_url = request.build_absolute_uri(default_storage.url(file_path))
 
-            # Crear el mensaje
-            email_message = EmailMessage(
-                subject,
-                message_body,
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                to=[settings.CONTACT_EMAIL],
-            )
+        # Configuración de la API de Brevo
+        configuration = sib_api_v3_sdk.Configuration()
+        configuration.api_key['api-key'] = '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'
+        api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
 
-            # Adjuntar el archivo si existe
-            if uploaded_file:
-                email_message.attach(uploaded_file.name, uploaded_file.read(), uploaded_file.content_type)
+        # Preparar contenido del correo
+        html_content = f"""
+        <p><strong>Name:</strong> {name}</p>
+        <p><strong>Company:</strong> {company}</p>
+        <p><strong>Email:</strong> {email}</p>
+        <p><strong>Phone:</strong> {phone}</p>
+        <p><strong>Message:</strong><br>{message}</p>
+        """
+        if file_url:
+            html_content += f'<p><strong>File Uploaded:</strong> <a href="{file_url}">{uploaded_file.name}</a></p>'
 
-            # Enviar el email
-            email_message.send(fail_silently=False)
+        send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(
+            to=[{"email": "dialga602002@gmail.com"}],
+            sender={"name": name, "email": email},
+            subject=f"New contact from {name} via Bensons Workwear",
+            html_content=html_content
+        )
 
-            return render(request, 'index.html')  # o redirigir a página de gracias
+        try:
+            api_response = api_instance.send_transac_email(send_smtp_email)
+            messages.success(request, "Your message has been sent successfully.")
+        except ApiException as e:
+            messages.error(request, f"Failed to send message. {e}")
 
-    else:
-        form = ContactForm()
+        return redirect('pages:contact_us')
 
-    return render(request, 'contact_us.html', {'form': form})
+    return render(request, 'contact_us.html')
+
 
 
 def test_email(request):

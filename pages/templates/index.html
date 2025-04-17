@@ -1,9 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'shared/base.html' %}
+
 
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'shared/css/index.css' %}">
-<link rel="stylesheet" href="{% static 'shared/css/carrousel_button.css' %}">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/carrousel_button.css' %}">
 
 <!-- Carrousel -->
 <div id="carouselSwipe" class="carousel slide" data-bs-touch="true" data-bs-ride="carousel">
@@ -11,7 +12,7 @@
 
     <!-- Camareros -->
     <div class="carousel-item active">
-      <img src="{% static 'shared/img/test1.png' %}" class="d-block w-100" style="object-position: 50% 10%" alt="Waiters">
+      <img src="{% static 'carrousel_img/suits.png' %}" class="d-block w-100" style="object-position: 50% 10%" alt="Waiters">
       <div class="carousel-caption d-block carrousel-text">
         <div class="container">
           <div class="row justify-content-center">
@@ -34,7 +35,7 @@
 
     <!-- Trabajadores de la construcción -->
     <div class="carousel-item">
-      <img src="{% static 'shared/img/construction_workers.jpg' %}" class="d-block w-100" alt="Construction Workers">
+      <img src="{% static 'carrousel_img/construction_workers.jpg' %}" class="d-block w-100" alt="Construction Workers">
       <div class="carousel-caption d-block carrousel-text">
         <div class="container">
           <div class="row justify-content-center">
@@ -49,7 +50,7 @@
 
     <!-- Trabajadores de hotel -->
     <div class="carousel-item">
-      <img src="{% static 'shared/img/hotel_workers.jpg' %}" class="d-block w-100" alt="Hotel Workers">
+      <img src="{% static 'carrousel_img/hotel_workers.jpg' %}" class="d-block w-100" alt="Hotel Workers">
       <div class="carousel-caption d-block carrousel-text">
         <div class="container">
           <div class="row justify-content-center">
@@ -114,35 +115,35 @@
           <div class="container text-center">
               <div class="row">
                   <div class="col-md-4">
-                      <img src="{% static 'shared/img/clients/CastleMartyr Resort.avif' %}" class="clients_logo" alt="CastleMartyr Resort">
+                      <img src="{% static 'clients/CastleMartyr Resort.avif' %}" class="clients_logo" alt="CastleMartyr Resort">
                   </div>
                   <div class="col-md-4">
-                      <img src="{% static 'shared/img/clients/Fota Island Resort.avif' %}" class="clients_logo" alt="Fota Island Resort">
+                      <img src="{% static 'clients/Fota Island Resort.avif' %}" class="clients_logo" alt="Fota Island Resort">
                   </div>
                   <div class="col-md-4">
-                      <img src="{% static 'shared/img/clients/The Green Hotel.avif' %}" class="clients_logo" alt="The Green Hotel">
-                  </div>
-              </div>
-              <div class="row mt-3">
-                  <div class="col-md-4">
-                      <img src="{% static 'shared/img/clients/LMETB.avif' %}" class="clients_logo" alt="LMETB">
-                  </div>
-                  <div class="col-md-4">
-                      <img src="{% static 'shared/img/clients/Kilronan Castle Estate & Spa.avif' %}" class="clients_logo" alt="Kilronan Castle Estate & Spa">
-                  </div>
-                  <div class="col-md-4">
-                      <img src="{% static 'shared/img/clients/Mearas Garden Center.avif' %}" class="clients_logo" alt="Mearas Garden Center">
+                      <img src="{% static 'clients/The Green Hotel.avif' %}" class="clients_logo" alt="The Green Hotel">
                   </div>
               </div>
               <div class="row mt-3">
                   <div class="col-md-4">
-                      <img src="{% static 'shared/img/clients/Radisson Blu Hotels.avif' %}" class="clients_logo" alt="Radisson Blu Hotels">
+                      <img src="{% static 'clients/LMETB.avif' %}" class="clients_logo" alt="LMETB">
                   </div>
                   <div class="col-md-4">
-                      <img src="{% static 'shared/img/clients/Reardens Group.avif' %}" class="clients_logo" alt="Reardens Group">
+                      <img src="{% static 'clients/Kilronan Castle Estate & Spa.avif' %}" class="clients_logo" alt="Kilronan Castle Estate & Spa">
                   </div>
                   <div class="col-md-4">
-                      <img src="{% static 'shared/img/clients/Teagasc.avif' %}" class="clients_logo" alt="Teagasc">
+                      <img src="{% static 'clients/Mearas Garden Center.avif' %}" class="clients_logo" alt="Mearas Garden Center">
+                  </div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-4">
+                      <img src="{% static 'clients/Radisson Blu Hotels.avif' %}" class="clients_logo" alt="Radisson Blu Hotels">
+                  </div>
+                  <div class="col-md-4">
+                      <img src="{% static 'clients/Reardens Group.avif' %}" class="clients_logo" alt="Reardens Group">
+                  </div>
+                  <div class="col-md-4">
+                      <img src="{% static 'clients/Teagasc.avif' %}" class="clients_logo" alt="Teagasc">
                   </div>
               </div>
           </div>
@@ -183,41 +184,6 @@
 </div>
 
 
-<script>
-  window.onload = function () {
-    // Dispara la función con el botón por defecto
-    const defaultBtn = document.querySelector('.dropdown-item.active');
-    if (defaultBtn) {
-      filterCards('workwear', defaultBtn);
-    }
-  };
-
-  function filterCards(category, clickedButton) {
-    // Ocultar todas las cartas
-    document.querySelectorAll('#card-container .col').forEach(col => {
-      col.classList.add('d-none');
-    });
-
-    // Mostrar solo las cartas de la categoría seleccionada
-    document.querySelectorAll(`#card-container .${category}`).forEach(col => {
-      col.classList.remove('d-none');
-    });
-
-    // Quitar clase activa de todos los botones del dropdown
-    document.querySelectorAll('.dropdown-item').forEach(btn => {
-      btn.classList.remove('active');
-    });
-
-    // Agregar clase activa al botón clicado
-    clickedButton.classList.add('active');
-
-    // Cerrar el dropdown (si se desea)
-    const dropdown = bootstrap.Dropdown.getInstance(clickedButton.closest('.dropdown-toggle'));
-    if (dropdown) {
-      dropdown.hide();
-    }
-  }
-</script>
 
 {% endblock %}
 

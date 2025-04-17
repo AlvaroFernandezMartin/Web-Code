@@ -1,11 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'shared/base.html' %}
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'shared/css/brochures.css' %}">
+<link rel="stylesheet" href="{% static 'css/brochures.css' %}">
 
 <div class="container py-5">
-    <img class="broucheres_colage_img" src="{% static 'shared/img/broucheres_colage.avif' %}" alt="">
+    <img class="broucheres_colage_img" src="{% static 'brochures/icon/broucheres_colage.avif' %}" alt="">
 
     <h1 class="text-center mb-4 m-4">Download Our Brochures</h1>
 
@@ -22,8 +22,8 @@
             </p>
         </div>
 
-        <a href="{% static 'shared/brochures/brochure_catalogue.pdf' %}" download>
-            <img class="broucheres_catalogues" src="{% static 'shared/img/broucheres_catalogues.avif' %}" alt="Download Catalogue">
+        <a href="{% static 'brochures/icon/brochure_catalogue.pdf' %}" download>
+            <img class="broucheres_catalogues" src="{% static 'brochures/icon/broucheres_catalogues.avif' %}" alt="Download Catalogue">
         </a>
     </div>
 
@@ -38,48 +38,48 @@
         </div>
         <div class="row gy-4 brochure-cards">
             <div class="col-md-4 text-center">
-                <a href="{% static 'shared/brochures/corporatewear.pdf' %}" download>
-                    <img src="{% static 'shared/brochures/corporatewear_img.webp' %}" alt="Corporate Wear" class="img-fluid mb-3 brochure-icon">
+                <a href="{% static 'brochures/icon/corporatewear.pdf' %}" download>
+                    <img src="{% static 'brochures/icon/corporatewear_img.webp' %}" alt="Corporate Wear" class="img-fluid mb-3 brochure-icon">
                 </a>
                 <h4>Corporate Wear</h4>
                 <p>Explore our catalogue of modern corporate suits and business uniforms.</p>
             </div>
     
             <div class="col-md-4 text-center">
-                <a href="{% static 'shared/brochures/hospitalitywear.pdf' %}" download>
-                    <img src="{% static 'shared/brochures/HOSPITALITYWEAR_img.webp' %}" alt="Hospitality" class="img-fluid mb-3 brochure-icon">
+                <a href="{% static 'brochures/icon/hospitalitywear.pdf' %}" download>
+                    <img src="{% static 'brochures/icon/HOSPITALITYWEAR_img.webp' %}" alt="Hospitality" class="img-fluid mb-3 brochure-icon">
                 </a>
                 <h4>Hospitality</h4>
                 <p>Discover uniforms tailored for hotels, restaurants and service teams.</p>
             </div>
     
             <div class="col-md-4 text-center">
-                <a href="{% static 'shared/brochures/beauty_health.pdf' %}" download>
-                    <img src="{% static 'shared/brochures/BEAUTY&HEALTH_img.webp' %}" alt="Healthcare" class="img-fluid mb-3 brochure-icon">
+                <a href="{% static 'brochures/icon/beauty_health.pdf' %}" download>
+                    <img src="{% static 'brochures/icon/BEAUTY&HEALTH_img.webp' %}" alt="Healthcare" class="img-fluid mb-3 brochure-icon">
                 </a>
                 <h4>Healthcare</h4>
                 <p>Professional and comfortable uniforms for clinics and hospitals.</p>
             </div>
     
             <div class="col-md-4 text-center">
-                <a href="{% static 'shared/brochures/casualwear.pdf' %}" download>
-                    <img src="{% static 'shared/brochures/CASUALWEAR_img.webp' %}" alt="Casualwear" class="img-fluid mb-3 brochure-icon">
+                <a href="{% static 'brochures/icon/casualwear.pdf' %}" download>
+                    <img src="{% static 'brochures/icon/CASUALWEAR_img.webp' %}" alt="Casualwear" class="img-fluid mb-3 brochure-icon">
                 </a>
                 <h4>Casual Wear</h4>
                 <p>Relaxed and stylish uniforms for everyday work environments.</p>
             </div>
     
             <div class="col-md-4 text-center">
-                <a href="{% static 'shared/brochures/Chefswear.pdf' %}" download>
-                    <img src="{% static 'shared/brochures/CHESFWEAR_img.webp' %}" alt="Chefswear" class="img-fluid mb-3 brochure-icon">
+                <a href="{% static 'brochures/icon/Chefswear.pdf' %}" download>
+                    <img src="{% static 'brochures/icon/CHESFWEAR_img.webp' %}" alt="Chefswear" class="img-fluid mb-3 brochure-icon">
                 </a>
                 <h4>Chefswear</h4>
                 <p>High-quality clothing for chefs and kitchen professionals.</p>
             </div>
     
             <div class="col-md-4 text-center">
-                <a href="{% static 'shared/brochures/look book.pdf' %}" download>
-                    <img src="{% static 'shared/brochures/LOOK_BOOK_img.webp' %}" alt="Look Book" class="img-fluid mb-3 brochure-icon">
+                <a href="{% static 'brochures/icon/look book.pdf' %}" download>
+                    <img src="{% static 'brochures/icon/LOOK_BOOK_img.webp' %}" alt="Look Book" class="img-fluid mb-3 brochure-icon">
                 </a>
                 <h4>Look Book</h4>
                 <p>Browse our seasonal styles and inspirations in our lookbook.</p>
