@@ -1,21 +1,11 @@
-from django.shortcuts import render
-from django.core.mail import EmailMessage
-from django.conf import settings
-from .forms import ContactForm
-from django.http import HttpResponse
-
-import requests
-
 from django.shortcuts import render, redirect
+from django.core.mail import EmailMessage
 from django.contrib import messages
+from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
-import sib_api_v3_sdk
-from sib_api_v3_sdk.rest import ApiException
-from django.core.files.storage import default_storage
-from django.core.files.base import ContentFile
 import os
 
-@csrf_exempt
+@csrf_exempt  
 def contact_us(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -25,43 +15,48 @@ def contact_us(request):
         message = request.POST.get('message')
         uploaded_file = request.FILES.get('file')
 
-        # Guardar el archivo temporalmente (si existe)
-        file_url = ""
+        # Validate max file size (5 MB)
+        if uploaded_file and uploaded_file.size > 5 * 1024 * 1024:
+            messages.error(request, "The file exceeds the maximum allowed size of 5 MB.")
+            return redirect('pages:contact_us')
+
+        # Validate allowed file types
         if uploaded_file:
-            if uploaded_file.size > 5 * 1024 * 1024:
-                messages.error(request, "File size exceeds 5MB.")
+            ALLOWED_EXTENSIONS = ['.pdf', '.png', '.jpg', '.jpeg', '.txt', '.eps', '.ai']
+            ext = os.path.splitext(uploaded_file.name)[1].lower()
+            if ext not in ALLOWED_EXTENSIONS:
+                messages.error(request, "Unsupported file type.")
                 return redirect('pages:contact_us')
-            file_path = default_storage.save(f"temp/{uploaded_file.name}", ContentFile(uploaded_file.read()))
-            file_url = request.build_absolute_uri(default_storage.url(file_path))
 
-        # Configuración de la API de Brevo
-        configuration = sib_api_v3_sdk.Configuration()
-        configuration.api_key['api-key'] = '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'
-        api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
+        # Message content
+        subject = f"New message from the contact form: {name}"
+        body = f"""
+                    Name: {name}
+                    Company: {company}
+                    Email: {email}
+                    Phone: {phone}
 
-        # Preparar contenido del correo
-        html_content = f"""
-        <p><strong>Name:</strong> {name}</p>
-        <p><strong>Company:</strong> {company}</p>
-        <p><strong>Email:</strong> {email}</p>
-        <p><strong>Phone:</strong> {phone}</p>
-        <p><strong>Message:</strong><br>{message}</p>
-        """
-        if file_url:
-            html_content += f'<p><strong>File Uploaded:</strong> <a href="{file_url}">{uploaded_file.name}</a></p>'
+                    Message:
+                    {message}
+                """
 
-        send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(
-            to=[{"email": "dialga602002@gmail.com"}],
-            sender={"name": name, "email": email},
-            subject=f"New contact from {name} via Bensons Workwear",
-            html_content=html_content
+        # Send email via SMTP (Brevo)
+        email_msg = EmailMessage(
+            subject=subject,
+            body=body,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=[settings.CONTACT_EMAIL],
+            reply_to=[email]
         )
 
+        if uploaded_file:
+            email_msg.attach(uploaded_file.name, uploaded_file.read(), uploaded_file.content_type)
+
         try:
-            api_response = api_instance.send_transac_email(send_smtp_email)
+            email_msg.send(fail_silently=False)
             messages.success(request, "Your message has been sent successfully.")
-        except ApiException as e:
-            messages.error(request, f"Failed to send message. {e}")
+        except Exception as e:
+            messages.error(request, f"Failed to send the message: {e}")
 
         return redirect('pages:contact_us')
 
@@ -69,31 +64,7 @@ def contact_us(request):
 
 
 
-def test_email(request):
-    url = "https://api.brevo.com/v3/smtp/email"
 
-    payload = {
-        "sender": {"name": "Bensons Website","email": "89f19d001@smtp-brevo.com"},
-        "to": [{"email": "alvarofernandezmartintr@gmail.com", "name": "Alvaro"}],
-        "subject": "Test Email via Brevo API",
-        "htmlContent": "<html><body><h1>Hello from Brevo API!</h1><p>This is a test email sent from Django using Brevo API.</p></body></html>"
-    }
-
-    headers = {
-        "accept": "application/json",
-        "api-key": settings.BREVO_API_KEY,
-        "content-type": "application/json"
-    }
-
-    response = requests.post(url, json=payload, headers=headers)
-
-    print(response.status_code)
-    print(response.text)  # <--- Añade esto para ver la respuesta completa
-
-    if response.status_code == 201:
-        return HttpResponse("✅ Email sent successfully via Brevo API.")
-    else:
-        return HttpResponse(f"❌ Failed to send email: {response.status_code}\n{response.text}")
 
 
 

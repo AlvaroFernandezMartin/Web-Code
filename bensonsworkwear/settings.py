@@ -133,13 +133,13 @@ USE_DJANGO_JQUERY = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Email settings
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp-relay.brevo.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = '89f19d001@smtp-brevo.com'
-EMAIL_HOST_PASSWORD = ''
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-CONTACT_EMAIL = ''
-BREVO_API_KEY = ''
+EMAIL_HOST_USER = '89f5f1001@smtp-brevo.com'
+EMAIL_HOST_PASSWORD = 'xsmtpsib-0ccf4fd167b0d3f9ee37df8507183d2bf1b22d710d7f0afd55c8131781b9a0d4-jMpZ7YzKTvS5bOIB'  
+DEFAULT_FROM_EMAIL = 'info@bensonsworkwear.com'
+CONTACT_EMAIL = 'alvarofernandezmartintr@gmail.com'
