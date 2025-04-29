@@ -20,9 +20,10 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('chaining/', include('smart_selects.urls')),
     path('admin/', admin.site.urls),
     path('', include('pages.urls')),  
+    path('chaining/', include('smart_selects.urls')),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
