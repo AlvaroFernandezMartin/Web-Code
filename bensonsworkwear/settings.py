@@ -31,6 +31,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 # Application definition
+CSRF_TRUSTED_ORIGINS = [
+    "https://preview.bensonsworkwear.com",
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
