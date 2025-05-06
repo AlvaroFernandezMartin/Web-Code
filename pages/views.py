@@ -18,7 +18,8 @@ def home(request):
 def clothing_catalogue(request):
     products = Product.objects.select_related('category').all()
     categories = Category.objects.all()
-    return render(request, 'clothing_cathalogue.html', {'products': products, 'categories': categories})
+    return render(request, 'clothing_catalogue.html', {'products': products, 'categories': categories})
+
 
 def case_study(request):
     return render(request, 'case_study.html')  
