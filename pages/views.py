@@ -3,9 +3,35 @@ from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
+from products.models import Product, Category
+
+
 import os
 
 @csrf_exempt  
+
+def home(request):
+    products = Product.objects.select_related('category').all()
+    categories = Category.objects.all()
+    return render(request, 'index.html', {'products': products, 'categories': categories})
+
+def clothing_catalogue(request):
+    products = Product.objects.select_related('category').all()
+    categories = Category.objects.all()
+    return render(request, 'clothing_cathalogue.html', {'products': products, 'categories': categories})
+
+def case_study(request):
+    return render(request, 'case_study.html')  
+
+def about_us(request):
+    return render(request, 'about_us.html')  
+
+def faq(request):
+    return render(request, 'faq.html')  
+
+def brochures(request):
+    return render(request, 'brochures.html')  
+
 def contact_us(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -61,33 +87,4 @@ def contact_us(request):
         return redirect('pages:contact_us')
 
     return render(request, 'contact_us.html')
-
-
-
-
-
-
-
-def home(request):
-    return render(request, 'index.html') 
-
-def clothing_catalogue(request):
-    return render(request, 'clothing_cathalogue.html')  
-
-def case_study(request):
-    return render(request, 'case_study.html')  
-
-def about_us(request):
-    return render(request, 'about_us.html')  
-
-def faq(request):
-    return render(request, 'faq.html')  
-
-def brochures(request):
-    return render(request, 'brochures.html')  
-
-
-# def contact_us(request):
-#     return render(request, 'contact_us.html')
-
 

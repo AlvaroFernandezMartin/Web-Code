@@ -1,240 +1,51 @@
-<!-- templates/shared/_filter_cards.html -->
-<!-- Botones para seleccionar el grupo de cartas -->
 {% load static %}
-<style>
-    /* Asegurar que haya 5 columnas por fila */
-    #card-container .col {
-        flex: 0 0 20%;
-        max-width: 20%;
-    }
-
-    /* Ajustar el tamaño de las cartas sin reducir demasiado */
-    .card {
-        width: 100%; /* Ocupar todo el ancho de su contenedor */
-    }
-
-    /* Asegurar que las imágenes se ajusten sin deformarse */
-    .card-img-top {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-    .card-img-top {
-        transition: transform 0.3s ease-in-out; /* Suaviza la transición */
-    }
-    
-    .card:hover .card-img-top {
-        transform: scale(1.1); /* Escala la imagen al 110% */
-    }
-    @media (max-width: 768px) {
-        /* Asegurar que haya 4 columnas por fila */
-        #card-container .col {
-            flex: 0 0 33%;
-            max-width: 33%;
-        }
-        }
-      
-</style>
 
 
-<!-- Filtro desplegable -->
-<div class="dropdown px-3 py-2">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownFilter" data-bs-toggle="dropdown" aria-expanded="false">
-      Filter by Category
+<!-- Dropdown filter -->
+<div class="custom-dropdown">
+    <button class="btn  dropdown-toggle" type="button" id="dropdownFilter" data-bs-toggle="dropdown" aria-expanded="false">
+        Filter by Category
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownFilter">
-      <li><a class="dropdown-item active" onclick="filterCards('workwear', this)">Workwear</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('corporatewear', this)">Corporatewear</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('healthcare_uniforms', this)">Healthcare Uniforms</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('hospitality_catering', this)">Hospitality & Catering</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('education_childcare', this)">Education & Childcare</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('sports_leisurewear', this)">Sports & Leisurewear</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('ppe', this)">PPE (Personal Protective Equipment)</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('outdoor_weatherproof', this)">Outdoor & Weatherproof Wear</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('work_accessories', this)">Work Accessories</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('eco_friendly', this)">Eco-Friendly & Sustainable Workwear</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('automotive_transport', this)">Automotive & Transport Wear</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('construction_engineering', this)">Construction & Engineering Uniforms</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('custom_design', this)">Custom Design Services</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('hotel_resort', this)">Hotel & Resort Wear</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('promotional_merch', this)">Promotional Clothing & Merchandising</a></li>
-      <li><a class="dropdown-item" onclick="filterCards('embroidery_branding', this)">Embroidery & Branding Services</a></li>
+        {% for category in categories %}
+            <li>
+                <a class="dropdown-item {% if forloop.first %}active{% endif %}" 
+                   onclick="filterCards('{{ category.name|slugify }}', this)">
+                    {{ category.name }}
+                </a>
+            </li>
+        {% endfor %}
     </ul>
-  </div>
-  
-  
-  
+</div>
 
-    <!-- Contenedor de cartas -->
-    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 g-4" id="card-container">
-    <!-- Cartas de Ropa de Trabajo -->
-    <div class="col workwear d-none">
-        <div class="card">
-        <img src="{% static 'clothes/workwear/Flex trousers.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 1">
-
+<!-- Product cards -->
+<div id="card-container">
+    {% for product in products %}
+        <div class="card-col {{ product.category.name|slugify }} d-none">
+            <div class="product-card">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            </div>
         </div>
-    </div>
-
-    <div class="col workwear d-none">
-        <div class="card">
-        <img src="{% static 'clothes/workwear/Trade air-layer hoodie.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 2">
-
-        </div>
-    </div>
-
-    <div class="col workwear d-none">
-        <div class="card">
-        <img src="{% static 'clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
-
-        </div>
-    </div>
-
-    <div class="col workwear d-none">
-        <div class="card">
-        <img src="{% static 'clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
-
-        </div>
-    </div>
-        <div class="col workwear d-none">
-        <div class="card">
-        <img src="{% static 'clothes/workwear/Flex trousers.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 1">
-
-        </div>
-    </div>
-
-    <div class="col workwear d-none">
-        <div class="card">
-        <img src="{% static 'clothes/workwear/Trade air-layer hoodie.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 2">
-
-        </div>
-    </div>
-
-    <div class="col workwear d-none">
-        <div class="card">
-        <img src="{% static 'clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
-
-        </div>
-    </div>
-
-    <div class="col workwear d-none">
-        <div class="card">
-        <img src="{% static 'clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
-
-        </div>
-    </div>   
-     <div class="col workwear d-none">
-        <div class="card">
-        <img src="{% static 'clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
-
-        </div>
-    </div>
-
-    <div class="col workwear d-none">
-        <div class="card">
-        <img src="{% static 'clothes/workwear/Trade active polo.jpg' %}" class="card-img-top img-fluid" alt="Ropa de Trabajo 3">
-
-        </div>
-    </div>
-
-
-
-    <!-- Hospitality Uniforms -->
-    <div class="col hospitality_uniforms d-none">
-        <div class="card">
-        <img src="{% static 'clothes/Hospitality service/apron.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 1">
-        <div class="card-body">
-            
-        </div>
-        </div>
-    </div>
-
-    <div class="col hospitality_uniforms d-none">
-        <div class="card">
-        <img src="{% static 'clothes/Hospitality service/Chef_short_sleeve_jacket.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 2">
-        <div class="card-body">
-        </div>
-        </div>
-    </div>
-
-    <div class="col hospitality_uniforms d-none">
-        <div class="card">
-        <img src="{% static 'clothes/Hospitality service/chef_jacket.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 3">
-        <div class="card-body">
-        </div>
-        </div>
-    </div>
-
-    <div class="col hospitality_uniforms d-none">
-        <div class="card">
-        <img src="{% static 'clothes/Hospitality service/craft apron.jpg' %}" class="card-img-top img-fluid" alt="Ropa Casual 4">
-        <div class="card-body">
-        </div>
-        </div>
-    </div>
-
-    <!-- Cartas de Trajes -->
-    <div class="col suits d-none">
-        <div class="card">
-        <img src="{% static 'clothes/suits/suits1.webp' %}" class="card-img-top img-fluid" alt="Traje 1">
-        <div class="card-body">
-        </div>
-        </div>
-    </div>
-
-    <div class="col suits d-none">
-        <div class="card">
-        <img src="{% static 'clothes/suits/suits2.webp' %}" class="card-img-top img-fluid" alt="Traje 2">
-        <div class="card-body">
-        </div>
-        </div>
-    </div>
-
-    <div class="col suits d-none">
-        <div class="card">
-        <img src="{% static 'clothes/suits/suits3.webp' %}" class="card-img-top img-fluid" alt="Traje 3">
-        </div>
-    </div>
-
-    <div class="col suits d-none">
-        <div class="card">
-        <img src="{% static 'clothes/suits/suits4.webp' %}" class="card-img-top img-fluid" alt="Traje 4">
-        </div>
-    </div>
+    {% endfor %}
 </div>
 
 <script>
     window.onload = function () {
-      // Dispara la función con el botón por defecto
-      const defaultBtn = document.querySelector('.dropdown-item.active');
-      if (defaultBtn) {
-        filterCards('workwear', defaultBtn);
-      }
+        // Activar categoría por defecto (la primera)
+        const defaultBtn = document.querySelector('.dropdown-item.active');
+        if (defaultBtn) {
+            const category = defaultBtn.textContent.trim().toLowerCase().replaceAll(" ", "-");
+            filterCards(category, defaultBtn);
+        }
     };
-  
+
     function filterCards(category, clickedButton) {
-      // Ocultar todas las cartas
-      document.querySelectorAll('#card-container .col').forEach(col => {
-        col.classList.add('d-none');
-      });
-  
-      // Mostrar solo las cartas de la categoría seleccionada
-      document.querySelectorAll(`#card-container .${category}`).forEach(col => {
-        col.classList.remove('d-none');
-      });
-  
-      // Quitar clase activa de todos los botones del dropdown
-      document.querySelectorAll('.dropdown-item').forEach(btn => {
-        btn.classList.remove('active');
-      });
-  
-      // Agregar clase activa al botón clicado
-      clickedButton.classList.add('active');
-  
-      // Cerrar el dropdown (si se desea)
-      const dropdown = bootstrap.Dropdown.getInstance(clickedButton.closest('.dropdown-toggle'));
-      if (dropdown) {
-        dropdown.hide();
-      }
+        // Ocultar todos
+        document.querySelectorAll('#card-container .card-col').forEach(col => col.classList.add('d-none'));
+        // Mostrar los de la categoría
+        document.querySelectorAll(`#card-container .${category}`).forEach(col => col.classList.remove('d-none'));
+        // Actualizar estilos activos
+        document.querySelectorAll('.dropdown-item').forEach(btn => btn.classList.remove('active'));
+        clickedButton.classList.add('active');
     }
-  </script>
-  
+</script>

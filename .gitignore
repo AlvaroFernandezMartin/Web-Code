@@ -40,3 +40,5 @@ media/
 # macOS system files
 .DS_Store
 shared/static/shared/brochures/*.pdf
+
+ralawise_images_selenium
