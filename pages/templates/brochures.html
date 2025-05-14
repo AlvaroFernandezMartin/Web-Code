@@ -22,9 +22,9 @@
             </p>
         </div>
 
-        <a href="{% static 'brochures/icon/brochure_catalogue.pdf' %}" download>
+        {% comment %} <a href="{% static 'brochures/icon/brochure_catalogue.pdf' %}" download> {% endcomment %}
             <img class="broucheres_catalogues" src="{% static 'brochures/icon/broucheres_catalogues.avif' %}" alt="Download Catalogue">
-        </a>
+        {% comment %} </a> {% endcomment %}
     </div>
 
     <div class="brochure-cards-wrapper py-4 px-3 mt-5">
@@ -38,7 +38,7 @@
         </div>
         <div class="row gy-4 brochure-cards">
             <div class="col-md-4 text-center">
-                <a href="{% static 'brochures/icon/corporatewear.pdf' %}" download>
+                <a href="{% static 'brochures/pdfs/corporatewear.pdf' %}" download>
                     <img src="{% static 'brochures/icon/corporatewear_img.webp' %}" alt="Corporate Wear" class="img-fluid mb-3 brochure-icon">
                 </a>
                 <h4>Corporate Wear</h4>
@@ -46,7 +46,7 @@
             </div>
     
             <div class="col-md-4 text-center">
-                <a href="{% static 'brochures/icon/hospitalitywear.pdf' %}" download>
+                <a href="{% static 'brochures/pdfs/hospitalitywear.pdf' %}" download>
                     <img src="{% static 'brochures/icon/HOSPITALITYWEAR_img.webp' %}" alt="Hospitality" class="img-fluid mb-3 brochure-icon">
                 </a>
                 <h4>Hospitality</h4>
@@ -54,7 +54,7 @@
             </div>
     
             <div class="col-md-4 text-center">
-                <a href="{% static 'brochures/icon/beauty_health.pdf' %}" download>
+                <a href="{% static 'brochures/pdfs/beauty_health.pdf' %}" download>
                     <img src="{% static 'brochures/icon/BEAUTY&HEALTH_img.webp' %}" alt="Healthcare" class="img-fluid mb-3 brochure-icon">
                 </a>
                 <h4>Healthcare</h4>
@@ -62,23 +62,23 @@
             </div>
     
             <div class="col-md-4 text-center">
-                <a href="{% static 'brochures/icon/casualwear.pdf' %}" download>
+                {% comment %} <a href="{% static 'brochures/pdfs/casualwear.pdf' %}" download> {% endcomment %}
                     <img src="{% static 'brochures/icon/CASUALWEAR_img.webp' %}" alt="Casualwear" class="img-fluid mb-3 brochure-icon">
-                </a>
+                {% comment %} </a> {% endcomment %}
                 <h4>Casual Wear</h4>
                 <p>Relaxed and stylish uniforms for everyday work environments.</p>
             </div>
     
             <div class="col-md-4 text-center">
-                <a href="{% static 'brochures/icon/Chefswear.pdf' %}" download>
+                <a href="{% static 'brochures/pdfs/Chefswear.pdf' %}" download>
                     <img src="{% static 'brochures/icon/CHESFWEAR_img.webp' %}" alt="Chefswear" class="img-fluid mb-3 brochure-icon">
                 </a>
                 <h4>Chefswear</h4>
                 <p>High-quality clothing for chefs and kitchen professionals.</p>
             </div>
-    
+
             <div class="col-md-4 text-center">
-                <a href="{% static 'brochures/icon/look book.pdf' %}" download>
+                <a href="{% static 'brochures/pdfs/look_book.pdf' %}" download>
                     <img src="{% static 'brochures/icon/LOOK_BOOK_img.webp' %}" alt="Look Book" class="img-fluid mb-3 brochure-icon">
                 </a>
                 <h4>Look Book</h4>
