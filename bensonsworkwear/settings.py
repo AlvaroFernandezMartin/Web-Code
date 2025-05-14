@@ -115,3 +115,19 @@ CONTACT_EMAIL = os.getenv('CONTACT_EMAIL')
 # OTHER SETTINGS
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 USE_DJANGO_JQUERY = True
+
+import logging
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
