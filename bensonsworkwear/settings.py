@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 import dj_database_url
-
+import logging
 # BASE DIRECTORY
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -116,7 +116,7 @@ CONTACT_EMAIL = os.getenv('CONTACT_EMAIL')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 USE_DJANGO_JQUERY = True
 
-import logging
+
 
 LOGGING = {
     'version': 1,
